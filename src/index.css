@@ -8,31 +8,31 @@
 
 /* --- Design Tokens --- */
 :root {
-  --bg-dark: #0a0a0a;
-  --bg-surface: #111111;
-  --bg-card: rgba(20, 10, 10, 0.75);
-  --bg-glass: rgba(245, 235, 208, 0.04);
-  --bg-glass-hover: rgba(245, 235, 208, 0.08);
+  --bg-dark: #F5EBD0;
+  --bg-surface: #EDE2C7;
+  --bg-card: rgba(255, 255, 255, 0.7);
+  --bg-glass: rgba(127, 1, 31, 0.04);
+  --bg-glass-hover: rgba(127, 1, 31, 0.08);
 
-  --border-glass: rgba(245, 235, 208, 0.12);
-  --border-hover: rgba(245, 235, 208, 0.35);
-  --border-glow: rgba(127, 1, 31, 0.5);
+  --border-glass: rgba(127, 1, 31, 0.18);
+  --border-hover: rgba(127, 1, 31, 0.45);
+  --border-glow: rgba(127, 1, 31, 0.25);
 
-  --text-white: #F5EBD0;
-  --text-muted: rgba(245, 235, 208, 0.6);
-  --text-dim: rgba(245, 235, 208, 0.35);
+  --text-white: #0a0a0a;
+  --text-muted: rgba(10, 10, 10, 0.75);
+  --text-dim: rgba(10, 10, 10, 0.55);
 
   --accent-cyan: #7F011F;
-  --accent-gold: #F5EBD0;
-  --accent-green: #b8424f;
-  --accent-purple: #c4506b;
+  --accent-gold: #7F011F;
+  --accent-green: #7F011F;
+  --accent-purple: #7F011F;
 
   /* Named palette */
   --burgundy: #7F011F;
-  --burgundy-light: #a01c35;
+  --burgundy-light: #9a0d2a;
   --burgundy-glow: rgba(127, 1, 31, 0.35);
   --sand: #F5EBD0;
-  --sand-dim: rgba(245, 235, 208, 0.15);
+  --sand-dim: rgba(127, 1, 31, 0.15);
 
   --font-stone: 'Cinzel', serif;
   --font-sans: 'Manrope', sans-serif;
@@ -132,7 +132,7 @@ body {
   font-family: var(--font-stone);
   font-size: clamp(2rem, 4.5vw, 3.25rem);
   font-weight: 700;
-  color: #ffffff;
+  color: #0a0a0a;
   letter-spacing: 0.05em;
   line-height: 1.2;
 }
@@ -188,7 +188,7 @@ body {
 
 .navbar.scrolled {
   padding: 1rem 0;
-  background: rgba(5, 5, 5, 0.88);
+  background: rgba(245, 235, 208, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-glass);
@@ -205,13 +205,13 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #ffffff;
+  color: #0a0a0a;
   text-decoration: none;
   transition: opacity var(--transition-fast);
 }
 
 .logo span {
-  color: var(--accent-cyan);
+  color: var(--burgundy);
 }
 
 .logo:hover {
@@ -264,7 +264,7 @@ body {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  color: white;
+  color: #0a0a0a;
   cursor: pointer;
   align-items: center;
   justify-content: center;
@@ -381,8 +381,8 @@ body {
 .hero-subtitle {
   font-family: var(--font-sans);
   font-size: clamp(0.95rem, 1.8vw, 1.25rem);
-  color: #ffffff;
-  font-weight: 500;
+  color: #7F011F;
+  font-weight: 600;
   letter-spacing: 0.08em;
   margin: 1.25rem auto 0;
   max-width: 780px;
@@ -494,8 +494,8 @@ body {
 }
 
 .about-text-box p strong {
-  color: var(--text-white);
-  font-weight: 600;
+  color: #0a0a0a;
+  font-weight: 700;
 }
 
 .about-details-list {
@@ -522,8 +522,8 @@ body {
 
 .about-detail-item .val {
   font-size: 0.95rem;
-  color: #ffffff;
-  font-weight: 500;
+  color: #0a0a0a;
+  font-weight: 600;
 }
 
 .stats-grid {
@@ -594,7 +594,7 @@ body {
 .skill-category-title {
   font-family: var(--font-stone);
   font-size: 1.2rem;
-  color: #ffffff;
+  color: #0a0a0a;
   letter-spacing: 0.05em;
 }
 
@@ -765,7 +765,7 @@ body {
 .project-title {
   font-family: var(--font-stone);
   font-size: 1.35rem;
-  color: #ffffff;
+  color: #0a0a0a;
   margin-bottom: 0.75rem;
 }
 
@@ -1119,7 +1119,7 @@ body {
 .contact-info h3 {
   font-family: var(--font-stone);
   font-size: 1.8rem;
-  color: #ffffff;
+  color: #0a0a0a;
 }
 
 .contact-info p {
@@ -1192,11 +1192,11 @@ body {
 
 .form-control {
   width: 100%;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.85);
   border: 1px solid var(--border-glass);
   border-radius: 10px;
   padding: 1rem 1.25rem;
-  color: var(--text-white);
+  color: #0a0a0a;
   font-family: var(--font-sans);
   font-size: 0.9rem;
   outline: none;
@@ -1204,7 +1204,7 @@ body {
 }
 
 .form-control::placeholder {
-  color: var(--text-dim);
+  color: rgba(10, 10, 10, 0.45);
 }
 
 .form-control:focus {
@@ -1309,8 +1309,8 @@ textarea.form-control {
   max-width: 860px;
   max-height: 90vh;
   overflow-y: auto;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-glass);
+  background: #F5EBD0;
+  border: 2px solid var(--burgundy);
   border-radius: 20px;
   padding: 2.5rem;
   position: relative;
@@ -1329,9 +1329,9 @@ textarea.form-control {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-glass);
-  color: white;
+  background: rgba(127, 1, 31, 0.1);
+  border: 1px solid var(--burgundy);
+  color: #0a0a0a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1352,7 +1352,7 @@ textarea.form-control {
 .modal-title {
   font-family: var(--font-stone);
   font-size: 2rem;
-  color: #ffffff;
+  color: #0a0a0a;
 }
 
 .modal-image {

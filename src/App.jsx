@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Lanyard from './components/Lanyard/Lanyard';
+import { ScrollZoom } from './components/ui/ScrollZoom';
 import suriyaPhoto from './assets/suriya-photo.jpg';
 import lanyardCustom from './assets/lanyard/lanyard-custom.jpg';
 
@@ -271,6 +272,16 @@ export default function App() {
               <span className="label">Lovely Professional University</span>
             </div>
           </div>
+        </section>
+
+        {/* ═══ UILORA SCROLL ZOOM ═══ */}
+        <section id="showcase">
+          <ScrollZoom
+            headline="Every line of code, intentional."
+            byline="SURIYA RAJA — B.TECH CSE 2026"
+            image="/assets/images/project-cloth.png"
+            accentColor="#7F011F"
+          />
         </section>
 
         {/* ═══ 2. ABOUT ═══ */}
