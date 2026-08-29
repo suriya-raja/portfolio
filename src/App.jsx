@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Lanyard from './components/Lanyard/Lanyard';
-import { ScrollZoom } from './components/ui/ScrollZoom';
+import { ScrollZoomSection } from './components/ui/ScrollZoom';
 import suriyaPhoto from './assets/suriya-photo.jpg';
 import lanyardCustom from './assets/lanyard/lanyard-custom.jpg';
 
@@ -274,48 +274,40 @@ export default function App() {
           </div>
         </section>
 
-        {/* ═══ UILORA SCROLL ZOOM ═══ */}
-        <section id="showcase">
-          <ScrollZoom
-            headline="Every line of code, intentional."
-            byline="SURIYA RAJA — B.TECH CSE 2026"
-            image="/assets/images/project-cloth.png"
-            accentColor="#7F011F"
-          />
-        </section>
-
-        {/* ═══ 2. ABOUT ═══ */}
-        <section id="about" className="section">
-          <div className="container">
-            <div className="section-header animate-up">
-              <span className="section-tag">01 / Introduction</span>
-              <h2 className="section-title">About Me</h2>
-              <p className="section-subtitle">A concise professional overview of my academic journey and technical aspirations.</p>
-            </div>
-            <div className="about-grid">
-              <div className="about-text-box animate-up">
-                <p>I am a <strong>second-year B.Tech Computer Science and Engineering student at Lovely Professional University</strong> with a strong passion for artificial intelligence, machine learning, and software development. I have developed solid foundational skills in <strong>Python, C++, SQL, web development, and IoT hardware</strong>.</p>
-                <p>I enjoy solving complex technical problems, analyzing algorithms, and transforming ideas into practical applications. My goal is to become a skilled <strong>Machine Learning Engineer</strong> working on cutting-edge AI systems.</p>
-                <div className="about-details-list">
-                  {[['Name','Suriya Raja'],['Degree & Year','B.Tech CSE (2nd Year)'],['University','Lovely Professional University'],['Area of Interest','Machine Learning & AI'],['Career Goal','ML Engineer']].map(([label,val]) => (
-                    <div key={label} className="about-detail-item">
-                      <span className="label">{label}</span>
-                      <span className="val">{val}</span>
+        {/* ═══ 2. ABOUT (WITH SCROLL ZOOM TRANSITION FROM LANDING) ═══ */}
+        <ScrollZoomSection id="about" className="py-12">
+          <section className="section" style={{ padding: '4rem 0' }}>
+            <div className="container">
+              <div className="section-header animate-up">
+                <span className="section-tag">01 / Introduction</span>
+                <h2 className="section-title">About Me</h2>
+                <p className="section-subtitle">A concise professional overview of my academic journey and technical aspirations.</p>
+              </div>
+              <div className="about-grid">
+                <div className="about-text-box animate-up">
+                  <p>I am a <strong>second-year B.Tech Computer Science and Engineering student at Lovely Professional University</strong> with a strong passion for artificial intelligence, machine learning, and software development. I have developed solid foundational skills in <strong>Python, C++, SQL, web development, and IoT hardware</strong>.</p>
+                  <p>I enjoy solving complex technical problems, analyzing algorithms, and transforming ideas into practical applications. My goal is to become a skilled <strong>Machine Learning Engineer</strong> working on cutting-edge AI systems.</p>
+                  <div className="about-details-list">
+                    {[['Name','Suriya Raja'],['Degree & Year','B.Tech CSE (2nd Year)'],['University','Lovely Professional University'],['Area of Interest','Machine Learning & AI'],['Career Goal','ML Engineer']].map(([label,val]) => (
+                      <div key={label} className="about-detail-item">
+                        <span className="label">{label}</span>
+                        <span className="val">{val}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="stats-grid animate-up">
+                  {[['2nd','Year B.Tech CSE'],['2+','Projects Built'],['LPU','University'],['ML','Engineering Focus']].map(([num,lbl]) => (
+                    <div key={lbl} className="stat-card">
+                      <span className="stat-number">{num}</span>
+                      <span className="stat-label">{lbl}</span>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="stats-grid animate-up">
-                {[['2nd','Year B.Tech CSE'],['2+','Projects Built'],['LPU','University'],['ML','Engineering Focus']].map(([num,lbl]) => (
-                  <div key={lbl} className="stat-card">
-                    <span className="stat-number">{num}</span>
-                    <span className="stat-label">{lbl}</span>
-                  </div>
-                ))}
-              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </ScrollZoomSection>
 
         {/* ═══ 3. SKILLS ═══ */}
         <section id="skills" className="section">
