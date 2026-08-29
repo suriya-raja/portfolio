@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects | Suriya Raja</title>
+    <meta name="description" content="Comprehensive project showcase by Suriya Raja — featuring Smart Cloth Management System, Food Waste Management Platform, and Throne of Kingdom Game.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 2 7 12 12 22 7 12 2'%3E%3C/polygon%3E%3Cpolyline points='2 17 12 22 22 17'%3E%3C/polyline%3E%3Cpolyline points='2 12 12 17 22 12'%3E%3C/polyline%3E%3C/svg%3E" type="image/svg+xml">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body style="background: var(--bg-dark); color: var(--text-white);">
+
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar scrolled">
+            <div class="container nav-container">
+                <a href="index.html" class="logo">SURIYA<span>.</span></a>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="index.html#contact">Connect</a></li>
+                </ul>
+
+                <button class="nav-toggle" aria-label="Toggle Navigation">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="4" y1="8" x2="20" y2="8"></line>
+                        <line x1="4" y1="16" x2="20" y2="16"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding-top: 8rem;">
+        <!-- Page Header -->
+        <section class="section" style="padding-bottom: 3rem;">
+            <div class="container text-center">
+                <div class="section-header" style="margin-bottom: 2rem;">
+                    <span class="section-tag">Archive / Selected Works</span>
+                    <h1 class="section-title">Projects Showcase</h1>
+                    <p class="section-subtitle">Deep dive into technical architectures, hardware sensor integration, web platforms, and game development built by Suriya Raja.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Details Section -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container" style="display: flex; flex-direction: column; gap: 3rem;">
+
+                <!-- Detailed Project 1: Smart Cloth Management System -->
+                <div class="glass-card animate-up" style="padding: 2.5rem;">
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+                        <div class="project-img-wrapper" style="height: 320px; border-radius: 12px;">
+                            <img src="assets/images/project-cloth.png" alt="Smart Cloth Management System">
+                        </div>
+
+                        <div>
+                            <span class="section-tag" style="margin-bottom: 0.5rem;">IoT & Hardware · 2025</span>
+                            <h2 style="font-family: var(--font-stone); font-size: 2rem; color: white; margin-bottom: 1rem;">Smart Cloth Management System</h2>
+                            
+                            <div class="ptrl-detail-box" style="margin-bottom: 1.5rem;">
+                                <div class="ptrl-detail-row">
+                                    <h4>P — Problem Statement</h4>
+                                    <p>Managing fabric storage manually is time-consuming and risks textile damage due to undetected temperature, humidity, and gas buildup.</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h4>T — Technology Stack</h4>
+                                    <p>ESP32 Microcontroller, Arduino, Embedded C++, DHT Sensors, Gas Sensors, Web Dashboard</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h4>R — Result & Solution</h4>
+                                    <p>Developed an automated IoT hardware system that continuously acquires sensor telemetry, triggers automated ventilation control, and visualizes real-time storage status on a responsive web portal.</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h4>L — Key Learnings</h4>
+                                    <p>Gained hands-on experience in microcontroller sensor interfacing, real-time feedback loops, embedded C++, and IoT-to-web telemetry data flow.</p>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                <span class="skill-tag">ESP32</span>
+                                <span class="skill-tag">Arduino</span>
+                                <span class="skill-tag">C++</span>
+                                <span class="skill-tag">IoT</span>
+                                <span class="skill-tag">DHT Sensors</span>
+                            </div>
+
+                            <div style="display: flex; gap: 1rem;">
+                                <a href="https://github.com/suriya-raja" target="_blank" class="btn-primary">View on GitHub 🐙</a>
+                                <a href="index.html#contact" class="btn-secondary">Inquire Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Project 2: Food Waste Management Platform (NOGIRR Screenshot) -->
+                <div class="glass-card animate-up" style="padding: 2.5rem;">
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+                        <div class="project-img-wrapper" style="height: 320px; border-radius: 12px;">
+                            <img src="assets/images/project-food.png" alt="Food Waste Management Platform (NOGIRR)">
+                        </div>
+
+                        <div>
+                            <span class="section-tag" style="margin-bottom: 0.5rem;">Web Development & Analytics · 2025</span>
+                            <h2 style="font-family: var(--font-stone); font-size: 2rem; color: white; margin-bottom: 1rem;">Food Waste Management Platform</h2>
+                            
+                            <div class="ptrl-detail-box" style="margin-bottom: 1.5rem;">
+                                <div class="ptrl-detail-row">
+                                    <h4>P — Problem Statement</h4>
+                                    <p>Organizations and individuals find it difficult to track surplus food resources efficiently, leading to avoidable food waste.</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h4>T — Technology Stack</h4>
+                                    <p>HTML5, CSS3, JavaScript, Python, MySQL, REST API</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h4>R — Result & Solution</h4>
+                                    <p>Developed a responsive web platform that allows users to log surplus food items, track inventory in real time, run search queries, and manage donor-recipient transactions seamlessly.</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h4>L — Key Learnings</h4>
+                                    <p>Significantly improved understanding of JavaScript DOM manipulation, MySQL database connectivity, CRUD operations, and responsive web design.</p>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                <span class="skill-tag">HTML/CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">REST API</span>
+                            </div>
+
+                            <div style="display: flex; gap: 1rem;">
+                                <a href="https://github.com/suriya-raja" target="_blank" class="btn-primary">View on GitHub 🐙</a>
+                                <a href="index.html#contact" class="btn-secondary">Inquire Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Project 3: Throne of Kingdom Game (KingdomsOfThrones Unity Screenshot) -->
+                <div class="glass-card animate-up" style="padding: 2.5rem;">
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+                        <div class="project-img-wrapper" style="height: 320px; border-radius: 12px;">
+                            <img src="assets/images/project-game.png" alt="Throne of Kingdom Game (KingdomsOfThrones)">
+                        </div>
+
+                        <div>
+                            <span class="section-tag" style="margin-bottom: 0.5rem;">Game Development & OOP · 2026</span>
+                            <h2 style="font-family: var(--font-stone); font-size: 2rem; color: white; margin-bottom: 1rem;">Throne of Kingdom Game</h2>
+                            
+                            <div class="ptrl-detail-box" style="margin-bottom: 1.5rem;">
+                                <div class="ptrl-detail-row">
+                                    <h4>P — Problem Statement</h4>
+                                    <p>Designing engaging strategy game mechanics with smooth unit pathfinding, interactive UI, and balanced resource management systems.</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h4>T — Technology Stack</h4>
+                                    <p>Unity Engine, C#, Game Design, Object-Oriented Programming (OOP), Physics Engine</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h4>R — Result & Solution</h4>
+                                    <p>Developed an interactive strategy kingdom game featuring resource collection, kingdom expansion, unit spawning, and tactical battle mechanics.</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h4>L — Key Learnings</h4>
+                                    <p>Mastered Unity game loop architecture, C# object-oriented design patterns, state machines, game physics, and interactive UI scripting.</p>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                <span class="skill-tag">Unity</span>
+                                <span class="skill-tag">C#</span>
+                                <span class="skill-tag">Game Dev</span>
+                                <span class="skill-tag">OOP</span>
+                            </div>
+
+                            <div style="display: flex; gap: 1rem;">
+                                <a href="https://github.com/suriya-raja" target="_blank" class="btn-primary">View on GitHub 🐙</a>
+                                <a href="index.html#contact" class="btn-secondary">Inquire Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p style="font-size: 0.85rem; color: var(--text-dim);">&copy; 2026 Suriya Raja — Lovely Professional University.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js?v=4"></script>
+</body>
+</html>
