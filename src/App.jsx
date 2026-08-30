@@ -442,20 +442,20 @@ export default function App() {
                 <div className="contact-list">
                   <a href="https://github.com/suriya-raja" target="_blank" rel="noreferrer" className="contact-item">
                     <div className="contact-item-icon">🐙</div>
-                    <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>GitHub</strong><span style={{ color: '#F5EBD0' }}>github.com/suriya-raja</span></div>
+                    <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>GitHub</strong><span style={{ color: '#0a0a0a' }}>github.com/suriya-raja</span></div>
                   </a>
                   <a href="https://www.linkedin.com/in/suriya-raja-8bb15737a" target="_blank" rel="noreferrer" className="contact-item">
                     <div className="contact-item-icon">💼</div>
-                    <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>LinkedIn</strong><span style={{ color: '#F5EBD0' }}>linkedin.com/in/suriya-raja-8bb15737a</span></div>
+                    <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>LinkedIn</strong><span style={{ color: '#0a0a0a' }}>linkedin.com/in/suriya-raja-8bb15737a</span></div>
                   </a>
                   <a href="mailto:suriyaraja565@gmail.com" className="contact-item">
                     <div className="contact-item-icon">✉</div>
-                    <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>Email</strong><span style={{ color: '#F5EBD0' }}>suriyaraja565@gmail.com</span></div>
+                    <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>Email</strong><span style={{ color: '#0a0a0a' }}>suriyaraja565@gmail.com</span></div>
                   </a>
                   <div className="contact-item" style={{ cursor:'default' }}>
                     <div className="contact-item-icon">📄</div>
                     <div style={{ display:'flex',justifyContent:'space-between',width:'100%',alignItems:'center' }}>
-                      <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>Resume PDF</strong><span style={{ color: '#F5EBD0' }}>Suriya_Raja_Resume.pdf</span></div>
+                      <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>Resume PDF</strong><span style={{ color: '#0a0a0a' }}>Suriya_Raja_Resume.pdf</span></div>
                       <a href="#" download="Suriya_Raja_Resume.pdf" className="btn-primary" style={{ padding:'0.4rem 1rem',fontSize:'0.75rem' }}>Download</a>
                     </div>
                   </div>

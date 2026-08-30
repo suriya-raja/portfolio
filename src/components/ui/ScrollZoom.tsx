@@ -19,14 +19,16 @@ export const ScrollZoomSection = ({ children, id, className = "" }) => {
   const shadowOpacity = useTransform(scrollYProgress, [0, 0.9], [0.25, 0]);
 
   return (
-    <div ref={containerRef} id={id} className={`relative w-full overflow-hidden ${className}`}>
+    <div ref={containerRef} id={id} className={`relative w-full overflow-hidden ${className}`} style={{ background: "#F5EBD0" }}>
       <motion.div
         style={{
           scale,
           borderRadius,
-          boxShadow: "0 25px 50px -12px rgba(127, 1, 31, 0.25)",
+          boxShadow: "0 20px 40px rgba(127, 1, 31, 0.2)",
+          borderColor: "#7F011F",
+          background: "#F5EBD0",
         }}
-        className="w-full h-full overflow-hidden border border-[#7F011F]/30"
+        className="w-full h-full overflow-hidden border-2"
       >
         {children}
       </motion.div>

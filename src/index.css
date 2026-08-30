@@ -10,17 +10,17 @@
 :root {
   --bg-dark: #F5EBD0;
   --bg-surface: #EDE2C7;
-  --bg-card: #0d0d0d;
+  --bg-card: #F5EBD0;
   --bg-glass: rgba(127, 1, 31, 0.04);
   --bg-glass-hover: rgba(127, 1, 31, 0.08);
 
-  --border-glass: rgba(127, 1, 31, 0.2);
-  --border-hover: rgba(127, 1, 31, 0.5);
-  --border-glow: rgba(127, 1, 31, 0.3);
+  --border-glass: #7F011F;
+  --border-hover: #7F011F;
+  --border-glow: rgba(127, 1, 31, 0.35);
 
-  --text-white: #F5EBD0;
-  --text-muted: rgba(245, 235, 208, 0.8);
-  --text-dim: rgba(245, 235, 208, 0.55);
+  --text-white: #0a0a0a;
+  --text-muted: #7F011F;
+  --text-dim: rgba(10, 10, 10, 0.75);
 
   --accent-cyan: #7F011F;
   --accent-gold: #7F011F;
@@ -148,16 +148,15 @@ body {
 
 /* --- Glassmorphism Card --- */
 .glass-card {
-  background: #0d0d0d;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1.5px solid rgba(127, 1, 31, 0.35);
+  background: #F5EBD0;
+  border: 2px solid #7F011F;
   border-radius: 16px;
   padding: 2rem;
   transition: all var(--transition-smooth);
   position: relative;
   overflow: hidden;
-  color: #F5EBD0;
+  color: #0a0a0a;
+  box-shadow: 0 6px 20px rgba(127, 1, 31, 0.12);
 }
 
 .glass-card::before {
@@ -166,14 +165,14 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(127, 1, 31, 0.4), transparent);
+  height: 2px;
+  background: #7F011F;
 }
 
 .glass-card:hover {
   border-color: #7F011F;
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(127, 1, 31, 0.25);
+  box-shadow: 0 16px 36px rgba(127, 1, 31, 0.22);
 }
 
 /* --- NAVBAR --- */
@@ -483,18 +482,19 @@ body {
 }
 
 .about-text-box {
-  background: #0d0d0d;
-  border: 1.5px solid rgba(127, 1, 31, 0.35);
+  background: #F5EBD0;
+  border: 2px solid #7F011F;
   border-radius: 16px;
   padding: 2.5rem;
-  color: #F5EBD0;
+  color: #0a0a0a;
+  box-shadow: 0 6px 20px rgba(127, 1, 31, 0.12);
 }
 
 .about-text-box p {
-  color: rgba(245, 235, 208, 0.8);
+  color: #0a0a0a;
   font-size: 1.05rem;
   margin-bottom: 1.25rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.8;
 }
 
@@ -509,7 +509,7 @@ body {
   gap: 1rem;
   margin-top: 1.75rem;
   padding-top: 1.5rem;
-  border-top: 1px solid var(--border-glass);
+  border-top: 1px solid rgba(127, 1, 31, 0.25);
 }
 
 .about-detail-item {
@@ -528,7 +528,7 @@ body {
 
 .about-detail-item .val {
   font-size: 0.95rem;
-  color: #F5EBD0;
+  color: #0a0a0a;
   font-weight: 600;
 }
 
@@ -541,16 +541,17 @@ body {
 .stat-card {
   padding: 1.75rem;
   text-align: center;
-  background: #0d0d0d;
-  border: 1.5px solid rgba(127, 1, 31, 0.35);
+  background: #F5EBD0;
+  border: 2px solid #7F011F;
   border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(127, 1, 31, 0.12);
 }
 
 .stat-number {
   font-family: var(--font-stone);
   font-size: 2.25rem;
   font-weight: 700;
-  color: var(--accent-cyan);
+  color: #7F011F;
   margin-bottom: 0.25rem;
   display: block;
 }
@@ -559,7 +560,7 @@ body {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: rgba(245, 235, 208, 0.8);
+  color: #0a0a0a;
   font-weight: 600;
 }
 
@@ -571,8 +572,8 @@ body {
 }
 
 .skill-category-card {
-  background: #0d0d0d;
-  border: 1.5px solid rgba(127, 1, 31, 0.35);
+  background: #F5EBD0;
+  border: 2px solid #7F011F;
   border-radius: 18px;
   padding: 2rem;
   height: 100%;
@@ -580,11 +581,12 @@ body {
   flex-direction: column;
   justify-content: space-between;
   transition: all var(--transition-smooth);
+  box-shadow: 0 6px 20px rgba(127, 1, 31, 0.12);
 }
 
 .skill-category-card:hover {
   border-color: #7F011F;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 25px rgba(127, 1, 31, 0.2);
+  box-shadow: 0 16px 36px rgba(127, 1, 31, 0.22);
 }
 
 .skill-category-header {
@@ -606,8 +608,8 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(127, 1, 31, 0.15);
-  border: 1px solid rgba(127, 1, 31, 0.4);
+  background: rgba(127, 1, 31, 0.12);
+  border: 1.5px solid #7F011F;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -617,7 +619,7 @@ body {
 .skill-category-title {
   font-family: var(--font-stone);
   font-size: 1.25rem;
-  color: #F5EBD0;
+  color: #0a0a0a;
   letter-spacing: 0.04em;
   font-weight: 700;
 }
@@ -629,8 +631,8 @@ body {
   letter-spacing: 0.15em;
   color: #7F011F;
   font-weight: 700;
-  background: rgba(127, 1, 31, 0.15);
-  border: 1px solid rgba(127, 1, 31, 0.3);
+  background: rgba(127, 1, 31, 0.12);
+  border: 1.5px solid #7F011F;
   padding: 0.25rem 0.6rem;
   border-radius: 20px;
 }
@@ -647,14 +649,14 @@ body {
   gap: 0.75rem;
   padding: 0.75rem 0.9rem;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(127, 1, 31, 0.25);
+  background: rgba(127, 1, 31, 0.06);
+  border: 1.5px solid #7F011F;
   transition: all var(--transition-fast);
   cursor: default;
 }
 
 .skill-badge-item:hover {
-  background: rgba(127, 1, 31, 0.18);
+  background: rgba(127, 1, 31, 0.16);
   border-color: #7F011F;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(127, 1, 31, 0.2);
@@ -674,7 +676,7 @@ body {
 .skill-badge-name {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #F5EBD0;
+  color: #0a0a0a;
   letter-spacing: 0.02em;
 }
 
@@ -789,7 +791,7 @@ body {
 
 .ptrl-item {
   font-size: 0.85rem;
-  color: rgba(245, 235, 208, 0.85);
+  color: #0a0a0a;
   line-height: 1.5;
 }
 
@@ -812,10 +814,10 @@ body {
   font-size: 0.7rem;
   padding: 0.25rem 0.65rem;
   border-radius: 6px;
-  background: rgba(127, 1, 31, 0.15);
-  border: 1px solid rgba(127, 1, 31, 0.3);
-  color: #F5EBD0;
-  font-weight: 500;
+  background: rgba(127, 1, 31, 0.12);
+  border: 1.5px solid #7F011F;
+  color: #0a0a0a;
+  font-weight: 600;
 }
 
 .project-actions {
@@ -832,12 +834,12 @@ body {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: #F5EBD0;
+  color: #0a0a0a;
   text-decoration: none;
   padding: 0.5rem 0.9rem;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(127, 1, 31, 0.35);
+  background: #F5EBD0;
+  border: 1.5px solid #7F011F;
   transition: all var(--transition-fast);
   cursor: pointer;
   font-weight: 600;
@@ -1154,20 +1156,21 @@ body {
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  color: #F5EBD0;
+  color: #0a0a0a;
   text-decoration: none;
   font-size: 0.95rem;
   padding: 0.85rem 1.25rem;
   border-radius: 12px;
-  background: #0d0d0d;
-  border: 1.5px solid rgba(127, 1, 31, 0.35);
+  background: #F5EBD0;
+  border: 2px solid #7F011F;
   transition: all var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(127, 1, 31, 0.1);
 }
 
 .contact-item:hover {
-  color: #F5EBD0;
+  color: #0a0a0a;
   border-color: #7F011F;
-  background: rgba(127, 1, 31, 0.2);
+  background: rgba(127, 1, 31, 0.12);
   transform: translateX(4px);
 }
 
@@ -1210,8 +1213,8 @@ body {
 
 .form-control {
   width: 100%;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid var(--border-glass);
+  background: #F5EBD0;
+  border: 2px solid #7F011F;
   border-radius: 10px;
   padding: 1rem 1.25rem;
   color: #0a0a0a;
@@ -1219,16 +1222,17 @@ body {
   font-size: 0.9rem;
   outline: none;
   transition: all var(--transition-fast);
+  font-weight: 500;
 }
 
 .form-control::placeholder {
-  color: rgba(10, 10, 10, 0.45);
+  color: rgba(10, 10, 10, 0.55);
 }
 
 .form-control:focus {
-  border-color: var(--accent-cyan);
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+  border-color: #7F011F;
+  background: #F5EBD0;
+  box-shadow: 0 0 15px rgba(127, 1, 31, 0.25);
 }
 
 textarea.form-control {
@@ -1330,12 +1334,14 @@ textarea.form-control {
   max-height: 90vh;
   overflow-y: auto;
   background: #F5EBD0;
-  border: 2px solid var(--burgundy);
+  border: 2px solid #7F011F;
   border-radius: 20px;
   padding: 2.5rem;
   position: relative;
   transform: scale(0.95) translateY(20px);
   transition: transform var(--transition-smooth);
+  color: #0a0a0a;
+  box-shadow: 0 20px 50px rgba(127, 1, 31, 0.25);
 }
 
 .modal-backdrop.active .modal-card {
@@ -1349,8 +1355,8 @@ textarea.form-control {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(127, 1, 31, 0.1);
-  border: 1px solid var(--burgundy);
+  background: rgba(127, 1, 31, 0.12);
+  border: 2px solid #7F011F;
   color: #0a0a0a;
   display: flex;
   align-items: center;
