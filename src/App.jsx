@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import Lanyard from './components/Lanyard/Lanyard';
 import { ScrollZoomSection } from './components/ui/ScrollZoom';
-import { StrokeFillHeading } from './components/ui/StrokeFill';
 import suriyaPhoto from './assets/suriya-photo.jpg';
 import lanyardCustom from './assets/lanyard/lanyard-custom.jpg';
 
@@ -228,10 +228,27 @@ export default function App() {
             {/* Text Column */}
             <div className="hero-headline-wrap">
               <span className="hero-greeting fade-up">HELLO, I'M SURIYA RAJA</span>
-              <div className="hero-title-stroke-wrap my-2" style={{ maxWidth: '650px' }}>
-                <StrokeFillHeading text="SURIYA" duration={2.2} strokeColor="#7F011F" fillColor="#0a0a0a" viewBox="0 0 700 120" fontSize="5.8rem" />
-                <StrokeFillHeading text="RAJA" duration={2.2} strokeColor="#7F011F" fillColor="#7F011F" viewBox="0 0 700 120" fontSize="5.8rem" />
-              </div>
+              <h1 className="hero-title">
+                <motion.span
+                  initial={{ WebkitTextStroke: "3px #7F011F", color: "transparent" }}
+                  whileInView={{ color: "#0a0a0a" }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  style={{ display: "inline-block", WebkitTextStroke: "3px #7F011F" }}
+                >
+                  SURIYA
+                </motion.span>
+                <br />
+                <motion.span
+                  initial={{ WebkitTextStroke: "3px #7F011F", color: "transparent" }}
+                  whileInView={{ color: "#7F011F" }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 1.2, ease: "easeInOut", delay: 0.2 }}
+                  style={{ display: "inline-block", WebkitTextStroke: "3px #7F011F" }}
+                >
+                  RAJA
+                </motion.span>
+              </h1>
               <h2 className="hero-subtitle fade-up">B.Tech CSE 2nd Year Student | Python Enthusiast | Aspiring ML Engineer</h2>
               <p className="hero-description fade-up">
                 I am a second-year Computer Science student at Lovely Professional University passionate about machine learning, artificial intelligence, and software development. I enjoy building practical projects and continuously improving my technical skills.
@@ -276,7 +293,16 @@ export default function App() {
             <div className="container">
               <div className="section-header animate-up">
                 <span className="section-tag">01 / Introduction</span>
-                <StrokeFillHeading text="ABOUT ME" duration={2.0} strokeColor="#7F011F" fillColor="#0a0a0a" viewBox="0 0 800 120" fontSize="4.2rem" />
+                <motion.h2
+                  className="section-title"
+                  initial={{ WebkitTextStroke: "2px #7F011F", color: "transparent" }}
+                  whileInView={{ color: "#0a0a0a" }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  style={{ WebkitTextStroke: "2px #7F011F" }}
+                >
+                  About Me
+                </motion.h2>
                 <p className="section-subtitle">A concise professional overview of my academic journey and technical aspirations.</p>
               </div>
               <div className="about-grid">
@@ -311,7 +337,16 @@ export default function App() {
             <div className="container">
               <div className="section-header animate-up">
                 <span className="section-tag">02 / Technical Stack</span>
-                <StrokeFillHeading text="SKILLS & TECH" duration={2.0} strokeColor="#7F011F" fillColor="#0a0a0a" viewBox="0 0 950 120" fontSize="3.8rem" />
+                <motion.h2
+                  className="section-title"
+                  initial={{ WebkitTextStroke: "2px #7F011F", color: "transparent" }}
+                  whileInView={{ color: "#0a0a0a" }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  style={{ WebkitTextStroke: "2px #7F011F" }}
+                >
+                  Skills & Technologies
+                </motion.h2>
                 <p className="section-subtitle">Core technical proficiencies and development tools across AI, software, and systems.</p>
               </div>
               <div className="skills-grid">
@@ -386,7 +421,16 @@ export default function App() {
             <div className="container">
               <div className="section-header animate-up">
                 <span className="section-tag">03 / Core Showcase</span>
-                <StrokeFillHeading text="PROJECTS SHOWCASE" duration={2.0} strokeColor="#7F011F" fillColor="#0a0a0a" viewBox="0 0 950 120" fontSize="3.6rem" />
+                <motion.h2
+                  className="section-title"
+                  initial={{ WebkitTextStroke: "2px #7F011F", color: "transparent" }}
+                  whileInView={{ color: "#0a0a0a" }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  style={{ WebkitTextStroke: "2px #7F011F" }}
+                >
+                  Projects (P → T → R → L)
+                </motion.h2>
                 <p className="section-subtitle">Structured technical breakdown demonstrating Problem, Technology, Result, and Learning.</p>
               </div>
               <div className="projects-filter animate-up">
@@ -432,7 +476,16 @@ export default function App() {
             <div className="container">
               <div className="section-header animate-up">
                 <span className="section-tag">04 / Connect With Me</span>
-                <StrokeFillHeading text="GET IN TOUCH" duration={2.0} strokeColor="#7F011F" fillColor="#0a0a0a" viewBox="0 0 800 120" fontSize="4.2rem" />
+                <motion.h2
+                  className="section-title"
+                  initial={{ WebkitTextStroke: "2px #7F011F", color: "transparent" }}
+                  whileInView={{ color: "#0a0a0a" }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  style={{ WebkitTextStroke: "2px #7F011F" }}
+                >
+                  Get In Touch
+                </motion.h2>
                 <p className="section-subtitle">Let's connect for machine learning opportunities, tech discussions, or project collaborations.</p>
               </div>
               <div className="contact-grid">
