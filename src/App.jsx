@@ -230,21 +230,31 @@ export default function App() {
               <span className="hero-greeting fade-up">HELLO, I'M SURIYA RAJA</span>
               <h1 className="hero-title">
                 <motion.span
-                  initial={{ WebkitTextStroke: "3px #7F011F", color: "transparent" }}
-                  whileInView={{ color: "#0a0a0a" }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 1.2, ease: "easeInOut" }}
-                  style={{ display: "inline-block", WebkitTextStroke: "3px #7F011F" }}
+                  initial={{ WebkitTextStroke: "3.5px #7F011F", color: "rgba(0,0,0,0)", opacity: 0, y: 10 }}
+                  whileInView={{
+                    WebkitTextStroke: ["3.5px #7F011F", "3.5px #7F011F", "1.5px #7F011F"],
+                    color: ["rgba(0,0,0,0)", "rgba(0,0,0,0)", "#0a0a0a"],
+                    opacity: [0, 1, 1],
+                    y: [10, 0, 0]
+                  }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ duration: 1.6, times: [0, 0.45, 1], ease: "easeInOut" }}
+                  style={{ display: "inline-block" }}
                 >
                   SURIYA
                 </motion.span>
                 <br />
                 <motion.span
-                  initial={{ WebkitTextStroke: "3px #7F011F", color: "transparent" }}
-                  whileInView={{ color: "#7F011F" }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 1.2, ease: "easeInOut", delay: 0.2 }}
-                  style={{ display: "inline-block", WebkitTextStroke: "3px #7F011F" }}
+                  initial={{ WebkitTextStroke: "3.5px #7F011F", color: "rgba(0,0,0,0)", opacity: 0, y: 10 }}
+                  whileInView={{
+                    WebkitTextStroke: ["3.5px #7F011F", "3.5px #7F011F", "1.5px #7F011F"],
+                    color: ["rgba(0,0,0,0)", "rgba(0,0,0,0)", "#7F011F"],
+                    opacity: [0, 1, 1],
+                    y: [10, 0, 0]
+                  }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ duration: 1.6, times: [0, 0.45, 1], ease: "easeInOut", delay: 0.15 }}
+                  style={{ display: "inline-block" }}
                 >
                   RAJA
                 </motion.span>
@@ -295,11 +305,15 @@ export default function App() {
                 <span className="section-tag">01 / Introduction</span>
                 <motion.h2
                   className="section-title"
-                  initial={{ WebkitTextStroke: "2px #7F011F", color: "transparent" }}
-                  whileInView={{ color: "#0a0a0a" }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 1.2, ease: "easeInOut" }}
-                  style={{ WebkitTextStroke: "2px #7F011F" }}
+                  initial={{ WebkitTextStroke: "2.5px #7F011F", color: "rgba(0,0,0,0)", opacity: 0, y: 10 }}
+                  whileInView={{
+                    WebkitTextStroke: ["2.5px #7F011F", "2.5px #7F011F", "1.5px #7F011F"],
+                    color: ["rgba(0,0,0,0)", "rgba(0,0,0,0)", "#0a0a0a"],
+                    opacity: [0, 1, 1],
+                    y: [10, 0, 0]
+                  }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 1.5, times: [0, 0.45, 1], ease: "easeInOut" }}
                 >
                   About Me
                 </motion.h2>
@@ -339,11 +353,15 @@ export default function App() {
                 <span className="section-tag">02 / Technical Stack</span>
                 <motion.h2
                   className="section-title"
-                  initial={{ WebkitTextStroke: "2px #7F011F", color: "transparent" }}
-                  whileInView={{ color: "#0a0a0a" }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 1.2, ease: "easeInOut" }}
-                  style={{ WebkitTextStroke: "2px #7F011F" }}
+                  initial={{ WebkitTextStroke: "2.5px #7F011F", color: "rgba(0,0,0,0)", opacity: 0, y: 10 }}
+                  whileInView={{
+                    WebkitTextStroke: ["2.5px #7F011F", "2.5px #7F011F", "1.5px #7F011F"],
+                    color: ["rgba(0,0,0,0)", "rgba(0,0,0,0)", "#0a0a0a"],
+                    opacity: [0, 1, 1],
+                    y: [10, 0, 0]
+                  }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 1.5, times: [0, 0.45, 1], ease: "easeInOut" }}
                 >
                   Skills & Technologies
                 </motion.h2>
@@ -423,11 +441,15 @@ export default function App() {
                 <span className="section-tag">03 / Core Showcase</span>
                 <motion.h2
                   className="section-title"
-                  initial={{ WebkitTextStroke: "2px #7F011F", color: "transparent" }}
-                  whileInView={{ color: "#0a0a0a" }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 1.2, ease: "easeInOut" }}
-                  style={{ WebkitTextStroke: "2px #7F011F" }}
+                  initial={{ WebkitTextStroke: "2.5px #7F011F", color: "rgba(0,0,0,0)", opacity: 0, y: 10 }}
+                  whileInView={{
+                    WebkitTextStroke: ["2.5px #7F011F", "2.5px #7F011F", "1.5px #7F011F"],
+                    color: ["rgba(0,0,0,0)", "rgba(0,0,0,0)", "#0a0a0a"],
+                    opacity: [0, 1, 1],
+                    y: [10, 0, 0]
+                  }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 1.5, times: [0, 0.45, 1], ease: "easeInOut" }}
                 >
                   Projects (P → T → R → L)
                 </motion.h2>
@@ -478,11 +500,15 @@ export default function App() {
                 <span className="section-tag">04 / Connect With Me</span>
                 <motion.h2
                   className="section-title"
-                  initial={{ WebkitTextStroke: "2px #7F011F", color: "transparent" }}
-                  whileInView={{ color: "#0a0a0a" }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 1.2, ease: "easeInOut" }}
-                  style={{ WebkitTextStroke: "2px #7F011F" }}
+                  initial={{ WebkitTextStroke: "2.5px #7F011F", color: "rgba(0,0,0,0)", opacity: 0, y: 10 }}
+                  whileInView={{
+                    WebkitTextStroke: ["2.5px #7F011F", "2.5px #7F011F", "1.5px #7F011F"],
+                    color: ["rgba(0,0,0,0)", "rgba(0,0,0,0)", "#0a0a0a"],
+                    opacity: [0, 1, 1],
+                    y: [10, 0, 0]
+                  }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 1.5, times: [0, 0.45, 1], ease: "easeInOut" }}
                 >
                   Get In Touch
                 </motion.h2>
