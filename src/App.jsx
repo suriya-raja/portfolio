@@ -2,71 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Lanyard from './components/Lanyard/Lanyard';
 import { ScrollZoomSection } from './components/ui/ScrollZoom';
-import { MorphingProjectScroll } from './components/ui/MorphingProjectScroll';
 import suriyaPhoto from './assets/suriya-photo.jpg';
 import lanyardCustom from './assets/lanyard/lanyard-custom.jpg';
 
 /* ─────────────────────────────────────────────
    DATA
-/* ─────────────────────────────────────────────
-   MAGIC TRANSFORM CARD COMPONENT (3D Tilt Effect)
-───────────────────────────────────────────── */
-function MagicTransformCard({ code, title, skills }) {
-  const [rotateX, setRotateX] = useState(0);
-  const [rotateY, setRotateY] = useState(0);
-
-  const handleMouseMove = (e) => {
-    const card = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - card.left - card.width / 2;
-    const y = e.clientY - card.top - card.height / 2;
-    setRotateX(-y / 16);
-    setRotateY(x / 16);
-  };
-
-  const handleMouseLeave = () => {
-    setRotateX(0);
-    setRotateY(0);
-  };
-
-  return (
-    <motion.div
-      className="skill-category-card magic-transform-card animate-up"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      animate={{ rotateX, rotateY }}
-      transition={{ type: 'spring', stiffness: 350, damping: 22 }}
-      style={{
-        perspective: 1000,
-        transformStyle: 'preserve-3d',
-        background: '#F5EBD0',
-        border: '3.5px solid #7F011F',
-        borderRadius: '18px',
-        boxShadow: '0 10px 30px rgba(127, 1, 31, 0.18)',
-      }}
-    >
-      <div className="skill-category-header" style={{ transform: 'translateZ(20px)' }}>
-        <div className="skill-category-header-left">
-          <div className="skill-icon-wrap" style={{ border: '2px solid #7F011F', background: 'rgba(127,1,31,0.12)', color: '#7F011F', fontWeight: 800 }}>{code}</div>
-          <h3 className="skill-category-title" style={{ fontWeight: 900, color: '#0a0a0a' }}>{title}</h3>
-        </div>
-        <span className="skill-category-count" style={{ border: '2px solid #7F011F', background: 'rgba(127,1,31,0.12)', color: '#7F011F', fontWeight: 800 }}>{skills.length} Points</span>
-      </div>
-      <div className="skill-badges-grid" style={{ transform: 'translateZ(15px)' }}>
-        {skills.map(s => (
-          <div key={s.name} className="skill-badge-item" style={{ background: 'rgba(127,1,31,0.06)', border: '2px solid #7F011F' }}>
-            <div className="skill-badge-info">
-              <span className="skill-badge-name" style={{ fontWeight: 800, color: '#0a0a0a' }}>{s.name}</span>
-              <span className="skill-badge-tier" style={{ fontWeight: 800, color: '#7F011F' }}>{s.tier}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-    </motion.div>
-  );
-}
-
-/* ─────────────────────────────────────────────
-   DATA (Requested Order: NOGIRR -> Kingdom of Thrones -> Tikki Topple -> Smart Cloth)
 ───────────────────────────────────────────── */
 const projects = [
   {
@@ -221,7 +161,6 @@ function showToast(message) {
 ───────────────────────────────────────────── */
 export default function App() {
   const [activeFilter, setActiveFilter] = useState('all');
-  const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const [modalProject, setModalProject] = useState(null);
   const [navScrolled, setNavScrolled] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
@@ -493,7 +432,25 @@ export default function App() {
                     ]
                   },
                 ].map(({ code, title, skills }) => (
-                  <MagicTransformCard key={title} code={code} title={title} skills={skills} />
+                  <div key={title} className="skill-category-card animate-up">
+                    <div className="skill-category-header">
+                      <div className="skill-category-header-left">
+                        <div className="skill-icon-wrap">{code}</div>
+                        <h3 className="skill-category-title">{title}</h3>
+                      </div>
+                      <span className="skill-category-count">{skills.length} Skills</span>
+                    </div>
+                    <div className="skill-badges-grid">
+                      {skills.map(s => (
+                        <div key={s.name} className="skill-badge-item">
+                          <div className="skill-badge-info">
+                            <span className="skill-badge-name">{s.name}</span>
+                            <span className="skill-badge-tier">{s.tier}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -522,15 +479,39 @@ export default function App() {
                 </motion.h2>
                 <p className="section-subtitle">Structured technical breakdown demonstrating Problem, Technology, Result, and Learning.</p>
               </div>
-              <div className="projects-filter animate-up" style={{ marginBottom: '2rem' }}>
-                {[['all','All Projects'],['web','Web Dev'],['game','Game Dev'],['iot','IoT & Hardware']].map(([f,lbl]) => (
+              <div className="projects-filter animate-up">
+                {[['all','All Projects'],['iot','IoT & Hardware'],['web','Web Dev'],['game','Game Dev']].map(([f,lbl]) => (
                   <button key={f} className={`filter-btn${activeFilter===f?' active':''}`} data-filter={f} onClick={() => setActiveFilter(f)}>{lbl}</button>
                 ))}
               </div>
-
-              {/* MORPHING SCROLL-DRIVEN PROJECT SHOWCASE (NO BUTTONS NEEDED) */}
-              <MorphingProjectScroll projects={filteredProjects} setModalProject={setModalProject} />
-
+              <div className="projects-grid">
+                {filteredProjects.map(p => (
+                  <div key={p.id} className="glass-card project-card animate-up" onClick={(e) => { if (!e.target.closest('a[target="_blank"]')) setModalProject(p); }}>
+                    <div className="project-img-wrapper">
+                      <img src={p.img} alt={p.title} />
+                      <span className="project-overlay-badge">{p.badge}</span>
+                    </div>
+                    <div className="project-content">
+                      <div>
+                        <h3 className="project-title">{p.title}</h3>
+                        <div className="ptrl-summary-list">
+                          {p.ptrl.map(row => <div key={row.label} className="ptrl-item"><strong>{row.label}</strong>{row.text}</div>)}
+                        </div>
+                        <div className="project-tech-tags">
+                          {p.tags.map(t => <span key={t} className="project-tech-tag">{t}</span>)}
+                        </div>
+                      </div>
+                      <div className="project-actions">
+                        {p.liveUrl ? (
+                          <a href={p.liveUrl} target="_blank" rel="noreferrer" className="btn-link" style={{ fontWeight: 800, color: '#7F011F' }}>Visit Live App →</a>
+                        ) : null}
+                        <button className="btn-link">P-T-R-L Details →</button>
+                        <a href={p.github} target="_blank" rel="noreferrer" className="btn-link">GitHub →</a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
               <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
                 <a href="projects.html" className="btn-secondary">View Projects Archive →</a>
               </div>
