@@ -229,11 +229,11 @@ export default function App() {
               <span className="hero-greeting fade-up">👋 Hello, I'm Suriya Raja</span>
               <h1 className="hero-title">
                 <div className="hero-char-wrap">
-                  {'SURIYA'.split('').map((c, i) => <span key={i} className="hero-char" style={{ transform: 'translateY(0)', opacity: 1 }}>{c}</span>)}
+                  {'SURIYA'.split('').map((c, i) => <span key={i} className="hero-char" style={{ transform: 'translateY(0)', opacity: 1, color: '#0a0a0a' }}>{c}</span>)}
                 </div>
                 <br />
                 <div className="hero-char-wrap">
-                  {'RAJA'.split('').map((c, i) => <span key={i} className="hero-char hero-char-outline" style={{ transform: 'translateY(0)', opacity: 1 }}>{c}</span>)}
+                  {'RAJA'.split('').map((c, i) => <span key={i} className="hero-char" style={{ transform: 'translateY(0)', opacity: 1, color: '#7F011F' }}>{c}</span>)}
                 </div>
               </h1>
               <h2 className="hero-subtitle fade-up">B.Tech CSE 2nd Year Student | Python Enthusiast | Aspiring ML Engineer</h2>
@@ -313,26 +313,69 @@ export default function App() {
         <section id="skills" className="section">
           <div className="container">
             <div className="section-header animate-up">
-              <span className="section-tag">02 / Technical Skills</span>
+              <span className="section-tag">02 / Technical Stack</span>
               <h2 className="section-title">Skills & Technologies</h2>
-              <p className="section-subtitle">Core technical skills categorized in structured bullet points.</p>
+              <p className="section-subtitle">Core technical proficiencies and development tools across AI, software, and systems.</p>
             </div>
             <div className="skills-grid">
               {[
-                { icon: '💻', title: 'Programming', items: ['Python','C++','C','SQL'] },
-                { icon: '🌐', title: 'Web Development', items: ['HTML5','CSS3','JavaScript','React'] },
-                { icon: '🗄️', title: 'Database', items: ['MySQL','MongoDB'] },
-                { icon: '🛠️', title: 'Tools & Environment', items: ['VS Code','Git & GitHub','Linux','Unity Engine'] },
-              ].map(({ icon, title, items }) => (
-                <div key={title} className="glass-card skill-category-card animate-up">
-                  <div>
-                    <div className="skill-category-header">
+                {
+                  icon: '💻',
+                  title: 'Programming',
+                  skills: [
+                    { name: 'Python', icon: '🐍', tier: 'Advanced' },
+                    { name: 'C++', icon: '⚡', tier: 'Proficient' },
+                    { name: 'C', icon: '⚙️', tier: 'Proficient' },
+                    { name: 'SQL', icon: '🗄️', tier: 'Proficient' },
+                  ]
+                },
+                {
+                  icon: '🌐',
+                  title: 'Web Development',
+                  skills: [
+                    { name: 'React', icon: '⚛️', tier: 'Advanced' },
+                    { name: 'HTML5', icon: '🌐', tier: 'Advanced' },
+                    { name: 'CSS3', icon: '🎨', tier: 'Advanced' },
+                    { name: 'JavaScript', icon: '⚡', tier: 'Advanced' },
+                  ]
+                },
+                {
+                  icon: '🗄️',
+                  title: 'Database & Cloud',
+                  skills: [
+                    { name: 'MySQL', icon: '🐬', tier: 'Proficient' },
+                    { name: 'MongoDB', icon: '🍃', tier: 'Intermediate' },
+                  ]
+                },
+                {
+                  icon: '🛠️',
+                  title: 'Tools & Ecosystem',
+                  skills: [
+                    { name: 'VS Code', icon: '📝', tier: 'Advanced' },
+                    { name: 'Git & GitHub', icon: '🐙', tier: 'Advanced' },
+                    { name: 'Linux', icon: '🐧', tier: 'Proficient' },
+                    { name: 'Unity Engine', icon: '🎮', tier: 'Intermediate' },
+                  ]
+                },
+              ].map(({ icon, title, skills }) => (
+                <div key={title} className="skill-category-card animate-up">
+                  <div className="skill-category-header">
+                    <div className="skill-category-header-left">
                       <div className="skill-icon-wrap">{icon}</div>
                       <h3 className="skill-category-title">{title}</h3>
                     </div>
-                    <ul className="skill-bullets-list">
-                      {items.map(item => <li key={item} className="skill-bullet-item"><span className="bullet-dot">•</span>{item}</li>)}
-                    </ul>
+                    <span className="skill-category-count">{skills.length} Skills</span>
+                  </div>
+                  <div className="skill-badges-grid">
+                    {skills.map(s => (
+                      <div key={s.name} className="skill-badge-item">
+                        <span className="skill-badge-icon">{s.icon}</span>
+                        <div className="skill-badge-info">
+                          <span className="skill-badge-name">{s.name}</span>
+                          <span className="skill-badge-tier">{s.tier}</span>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               ))}
