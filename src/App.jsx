@@ -57,8 +57,8 @@ const projects = [
     title: 'Tikki Topple Game',
     badge: 'Game Dev & 3D Strategy',
     img: '/assets/images/project-tikki.png',
-    liveUrl: null,
-    demo: '#',
+    liveUrl: 'https://tikki-topple.vercel.app/',
+    demo: 'https://tikki-topple.vercel.app/',
     problem: 'Designing a strategic Tiki totem placement game with dynamic player action cards, opponent positioning, and tactical round scoring.',
     technology: 'Unity Engine, C#, 3D Rendering, Game State Logic',
     result: 'Developed Tikki Topple, a strategy game featuring 3D totem aesthetics, action cards, opponent placement, and round-based scoring loops.',
@@ -93,6 +93,84 @@ const projects = [
       { label: 'Learning:', text: 'Embedded sensor connectivity & feedback loops.' },
     ],
   },
+];
+
+/* ─────────────────────────────────────────────
+   EDUCATION DATA
+───────────────────────────────────────────── */
+const educationList = [
+  {
+    id: 'lpu',
+    institution: 'Lovely Professional University (LPU)',
+    degree: 'B.Tech in Computer Science & Engineering (CSE)',
+    timeline: '2025 – 2029',
+    badge: 'Higher Education · 2nd Year CSE Student',
+    status: 'Currently Pursuing (Focus on Machine Learning & Software Engineering)',
+    description: 'Specializing in Machine Learning, Data Structures & Algorithms, Artificial Intelligence, and Software Engineering. Building practical projects across Web Platforms, IoT Hardware Telemetry, and Game Systems.',
+    highlights: ['Machine Learning & AI Principles', 'Python & C++ Data Structures', 'Full-Stack Web Architecture', 'Object-Oriented Design (OOP)']
+  },
+  {
+    id: 'velammal',
+    institution: 'Velammal School',
+    degree: 'Class 12 (Higher Secondary Senior Certificate)',
+    timeline: 'Graduated 2024',
+    badge: 'Class 12 · Higher Secondary',
+    status: 'Completed with Specialization in PCM & Computer Science',
+    description: 'Developed a solid foundation in Advanced Mathematics, Physics, Chemistry, and Computer Science Principles, fostering strong analytical logic and problem-solving skills.',
+    highlights: ['Higher Mathematics & Calculus', 'Physics & Analytical Reasoning', 'Computer Science Fundamentals', 'Algorithmic Problem Solving']
+  },
+  {
+    id: 'vikaasa',
+    institution: 'Vikaasa School',
+    degree: 'Class 10 (Secondary School Leaving Certificate)',
+    timeline: 'Graduated 2022',
+    badge: 'Class 10 · Secondary School',
+    status: 'Completed with Distinction in Core Sciences & Mathematics',
+    description: 'Established fundamental academic excellence, mathematical reasoning, and scientific methodology that paved the way for advanced computer science studies.',
+    highlights: ['Core Mathematics & Geometry', 'General Science & Physics', 'Logical Reasoning', 'Academic Excellence']
+  }
+];
+
+/* ─────────────────────────────────────────────
+   CERTIFICATIONS & ACHIEVEMENTS DATA
+───────────────────────────────────────────── */
+const achievementsList = [
+  {
+    id: 'cert-1',
+    title: 'Machine Learning & Artificial Intelligence Specialization',
+    issuer: 'Professional Specialization Certification',
+    date: '2025',
+    category: 'Certification',
+    description: 'Comprehensive study and practical application of Python, supervised & unsupervised ML algorithms, model evaluation, and neural network concepts.',
+    tags: ['Python', 'Machine Learning', 'AI Models', 'Data Analysis']
+  },
+  {
+    id: 'cert-2',
+    title: 'Full-Stack Web Engineering',
+    issuer: 'Modern Web Standards & Cloud Deployment',
+    date: '2025',
+    category: 'Certification',
+    description: 'Demonstrated competence in Next.js, React, Node.js, RESTful API design, database CRUD architecture, and cloud deployment on Vercel.',
+    tags: ['Next.js', 'React', 'Node.js', 'Vercel']
+  },
+  {
+    id: 'cert-3',
+    title: 'IoT Telemetry & Embedded Systems Distinction',
+    issuer: 'Hardware System Project Award',
+    date: '2025',
+    category: 'Achievement',
+    description: 'Designed and deployed real-time ESP32 microcontroller telemetry sensor array with automated ventilation feedback loops.',
+    tags: ['ESP32', 'Embedded C++', 'IoT Sensors', 'Telemetry']
+  },
+  {
+    id: 'cert-4',
+    title: 'Unity 3D Game Mechanics & OOP Architecture',
+    issuer: 'Game Development Showcase',
+    date: '2026',
+    category: 'Achievement',
+    description: 'Architected Object-Oriented C# game loops, state machines, turn-based card logic, and 3D rendering for strategy games.',
+    tags: ['Unity', 'C#', '3D Game Loop', 'OOP']
+  }
 ];
 
 /* ─────────────────────────────────────────────
@@ -217,14 +295,22 @@ export default function App() {
           <div className="container nav-container">
             <a href="#" className="logo">PORTFOLIO<span>.</span></a>
             <ul className={`nav-links${navOpen ? ' active' : ''}`}>
-              {['hero', 'about', 'skills', 'projects', 'contact'].map((id, i) => (
+              {[
+                { id: 'hero', label: 'Home' },
+                { id: 'about', label: 'About' },
+                { id: 'education', label: 'Education' },
+                { id: 'skills', label: 'Skills' },
+                { id: 'projects', label: 'Projects' },
+                { id: 'achievements', label: 'Achievements' },
+                { id: 'contact', label: 'Connect' },
+              ].map(({ id, label }) => (
                 <li key={id}>
                   <a
                     href={`#${id}`}
                     className={activeSection === id ? 'active' : ''}
                     onClick={() => setNavOpen(false)}
                   >
-                    {['Home', 'About', 'Skills', 'Projects', 'Connect'][i]}
+                    {label}
                   </a>
                 </li>
               ))}
@@ -457,12 +543,153 @@ export default function App() {
           </section>
         </ScrollZoomSection>
 
+        {/* ═══ 2.5 EDUCATION (WITH SCROLL ZOOM) ═══ */}
+        <ScrollZoomSection id="education" className="py-12">
+          <section className="section" style={{ padding: '4rem 0' }}>
+            <div className="container">
+              <div className="section-header animate-up">
+                <span className="section-tag">02 / Academic Journey</span>
+                <motion.h2
+                  className="section-title"
+                  initial={{ WebkitTextStroke: "2.5px #7F011F", color: "rgba(0,0,0,0)", opacity: 0, y: 10 }}
+                  whileInView={{
+                    WebkitTextStroke: ["2.5px #7F011F", "2.5px #7F011F", "1.5px #7F011F"],
+                    color: ["rgba(0,0,0,0)", "rgba(0,0,0,0)", "#0a0a0a"],
+                    opacity: [0, 1, 1],
+                    y: [10, 0, 0]
+                  }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 1.5, times: [0, 0.45, 1], ease: "easeInOut" }}
+                >
+                  Education
+                </motion.h2>
+                <p className="section-subtitle">Academic milestones from secondary education to undergraduate computer science engineering.</p>
+              </div>
+
+              <div className="education-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
+                {educationList.map((edu) => (
+                  <div key={edu.id} className="glass-card animate-up" style={{ padding: '2rem', background: '#F5EBD0', border: '3.5px solid #7F011F', borderRadius: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                    <div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                        <span className="section-tag" style={{ margin: 0, fontWeight: 800, color: '#7F011F' }}>{edu.badge}</span>
+                        <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#F5EBD0', background: '#7F011F', padding: '0.25rem 0.75rem', borderRadius: '20px', border: '1.5px solid #7F011F' }}>{edu.timeline}</span>
+                      </div>
+                      <h3 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0a0a0a', fontFamily: 'var(--font-stone)', marginBottom: '0.5rem' }}>{edu.institution}</h3>
+                      <h4 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#7F011F', marginBottom: '1rem' }}>{edu.degree}</h4>
+                      <p style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0a0a0a', lineHeight: 1.6, marginBottom: '1.25rem' }}>{edu.description}</p>
+                    </div>
+
+                    <div style={{ background: 'rgba(127,1,31,0.06)', border: '2px solid #7F011F', borderRadius: '12px', padding: '1rem' }}>
+                      <strong style={{ display: 'block', fontSize: '0.85rem', color: '#7F011F', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Key Highlights:</strong>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                        {edu.highlights.map((item) => (
+                          <span key={item} style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0a0a0a', background: '#F5EBD0', border: '1.5px solid #7F011F', padding: '0.2rem 0.5rem', borderRadius: '6px' }}>
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </ScrollZoomSection>
+
+        {/* ═══ 3. SKILLS (WITH SCROLL ZOOM) ═══ */}
+        <ScrollZoomSection id="skills" className="py-12">
+          <section className="section" style={{ padding: '4rem 0' }}>
+            <div className="container">
+              <div className="section-header animate-up">
+                <span className="section-tag">03 / Technical Stack</span>
+                <motion.h2
+                  className="section-title"
+                  initial={{ WebkitTextStroke: "2.5px #7F011F", color: "rgba(0,0,0,0)", opacity: 0, y: 10 }}
+                  whileInView={{
+                    WebkitTextStroke: ["2.5px #7F011F", "2.5px #7F011F", "1.5px #7F011F"],
+                    color: ["rgba(0,0,0,0)", "rgba(0,0,0,0)", "#0a0a0a"],
+                    opacity: [0, 1, 1],
+                    y: [10, 0, 0]
+                  }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 1.5, times: [0, 0.45, 1], ease: "easeInOut" }}
+                >
+                  Skills & Technologies
+                </motion.h2>
+                <p className="section-subtitle">Core technical proficiencies and development tools across AI, software, and systems.</p>
+              </div>
+              <div className="skills-grid">
+                {[
+                  {
+                    code: 'DEV',
+                    title: 'Programming',
+                    skills: [
+                      { name: 'Python', tier: 'Advanced' },
+                      { name: 'C++', tier: 'Proficient' },
+                      { name: 'C', tier: 'Proficient' },
+                      { name: 'SQL', tier: 'Proficient' },
+                    ]
+                  },
+                  {
+                    code: 'WEB',
+                    title: 'Web Development',
+                    skills: [
+                      { name: 'React', tier: 'Advanced' },
+                      { name: 'HTML5', tier: 'Advanced' },
+                      { name: 'CSS3', tier: 'Advanced' },
+                      { name: 'JavaScript', tier: 'Advanced' },
+                    ]
+                  },
+                  {
+                    code: 'DATA',
+                    title: 'Database & Cloud',
+                    skills: [
+                      { name: 'MySQL', tier: 'Proficient' },
+                      { name: 'MongoDB', tier: 'Intermediate' },
+                    ]
+                  },
+                  {
+                    code: 'TOOL',
+                    title: 'Tools & Ecosystem',
+                    skills: [
+                      { name: 'VS Code', tier: 'Advanced' },
+                      { name: 'Git & GitHub', tier: 'Advanced' },
+                      { name: 'Linux', tier: 'Proficient' },
+                      { name: 'Unity Engine', tier: 'Intermediate' },
+                    ]
+                  },
+                ].map(({ code, title, skills }) => (
+                  <div key={title} className="skill-category-card animate-up">
+                    <div className="skill-category-header">
+                      <div className="skill-category-header-left">
+                        <div className="skill-icon-wrap">{code}</div>
+                        <h3 className="skill-category-title">{title}</h3>
+                      </div>
+                      <span className="skill-category-count">{skills.length} Skills</span>
+                    </div>
+                    <div className="skill-badges-grid">
+                      {skills.map(s => (
+                        <div key={s.name} className="skill-badge-item">
+                          <div className="skill-badge-info">
+                            <span className="skill-badge-name">{s.name}</span>
+                            <span className="skill-badge-tier">{s.tier}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </ScrollZoomSection>
+
         {/* ═══ 4. PROJECTS (WITH SCROLL ZOOM) ═══ */}
         <ScrollZoomSection id="projects" className="py-12">
           <section className="section" style={{ padding: '4rem 0' }}>
             <div className="container">
               <div className="section-header animate-up">
-                <span className="section-tag">03 / Core Showcase</span>
+                <span className="section-tag">04 / Core Showcase</span>
                 <motion.h2
                   className="section-title"
                   initial={{ WebkitTextStroke: "2.5px #7F011F", color: "rgba(0,0,0,0)", opacity: 0, y: 10 }}
@@ -503,10 +730,10 @@ export default function App() {
                       </div>
                       <div className="project-actions">
                         {p.liveUrl ? (
-                          <a href={p.liveUrl} target="_blank" rel="noreferrer" className="btn-link" style={{ fontWeight: 800, color: '#7F011F' }}>Visit Live App →</a>
+                          <a href={p.liveUrl} target="_blank" rel="noreferrer" className="btn-primary" style={{ padding: '0.45rem 1rem', fontSize: '0.8rem', fontWeight: 800 }}>Visit Live App →</a>
                         ) : null}
-                        <button className="btn-link">P-T-R-L Details →</button>
-                        <a href={p.github} target="_blank" rel="noreferrer" className="btn-link">GitHub →</a>
+                        <a href={`projects.html#${p.id}`} className="btn-secondary" style={{ padding: '0.45rem 1rem', fontSize: '0.8rem', fontWeight: 800 }}>P-T-R-L Details →</a>
+                        <a href={p.github} target="_blank" rel="noreferrer" className="btn-link" style={{ fontWeight: 800 }}>GitHub →</a>
                       </div>
                     </div>
                   </div>
@@ -514,6 +741,56 @@ export default function App() {
               </div>
               <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
                 <a href="projects.html" className="btn-secondary">View Projects Archive →</a>
+              </div>
+            </div>
+          </section>
+        </ScrollZoomSection>
+
+        {/* ═══ 4.5 ACHIEVEMENTS & CERTIFICATIONS (WITH SCROLL ZOOM) ═══ */}
+        <ScrollZoomSection id="achievements" className="py-12">
+          <section className="section" style={{ padding: '4rem 0' }}>
+            <div className="container">
+              <div className="section-header animate-up">
+                <span className="section-tag">05 / Accomplishments</span>
+                <motion.h2
+                  className="section-title"
+                  initial={{ WebkitTextStroke: "2.5px #7F011F", color: "rgba(0,0,0,0)", opacity: 0, y: 10 }}
+                  whileInView={{
+                    WebkitTextStroke: ["2.5px #7F011F", "2.5px #7F011F", "1.5px #7F011F"],
+                    color: ["rgba(0,0,0,0)", "rgba(0,0,0,0)", "#0a0a0a"],
+                    opacity: [0, 1, 1],
+                    y: [10, 0, 0]
+                  }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 1.5, times: [0, 0.45, 1], ease: "easeInOut" }}
+                >
+                  Certifications & Achievements
+                </motion.h2>
+                <p className="section-subtitle">Technical certifications, project distinctions, and engineering milestones.</p>
+              </div>
+
+              <div className="achievements-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+                {achievementsList.map((item) => (
+                  <div key={item.id} className="glass-card animate-up" style={{ padding: '2rem', background: '#F5EBD0', border: '3.5px solid #7F011F', borderRadius: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                    <div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                        <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#F5EBD0', background: '#7F011F', padding: '0.25rem 0.75rem', borderRadius: '12px' }}>{item.category}</span>
+                        <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#7F011F' }}>{item.date}</span>
+                      </div>
+                      <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#0a0a0a', fontFamily: 'var(--font-stone)', marginBottom: '0.4rem' }}>{item.title}</h3>
+                      <h4 style={{ fontSize: '0.9rem', fontWeight: 800, color: '#7F011F', marginBottom: '1rem' }}>{item.issuer}</h4>
+                      <p style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0a0a0a', lineHeight: 1.6, marginBottom: '1.25rem' }}>{item.description}</p>
+                    </div>
+
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                      {item.tags.map((t) => (
+                        <span key={t} style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0a0a0a', background: 'rgba(127,1,31,0.08)', border: '1.5px solid #7F011F', padding: '0.2rem 0.6rem', borderRadius: '6px' }}>
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </section>

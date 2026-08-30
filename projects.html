@@ -60,140 +60,204 @@
 
         <!-- Project Details Section -->
         <section class="section" style="padding-top: 0;">
-            <div class="container" style="display: flex; flex-direction: column; gap: 3rem;">
+            <div class="container" style="display: flex; flex-direction: column; gap: 4rem;">
 
-                <!-- Detailed Project 1: Smart Cloth Management System -->
-                <div class="glass-card animate-up" style="padding: 2.5rem; background: #F5EBD0; border: 3.5px solid #7F011F; border-radius: 18px; color: #0a0a0a;">
-                    <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
-                        <div class="project-img-wrapper" style="height: 320px; border-radius: 12px; border: 2px solid #7F011F;">
-                            <img src="assets/images/project-cloth.png" alt="Smart Cloth Management System">
+                <!-- Detailed Project 1: Food Waste Management Platform (NOGIRR) -->
+                <div id="food" class="glass-card animate-up" style="padding: 3rem; background: #F5EBD0; border: 3.5px solid #7F011F; border-radius: 24px; color: #0a0a0a; scroll-margin-top: 6rem;">
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <div class="project-img-wrapper" style="height: 400px; border-radius: 16px; border: 3px solid #7F011F; overflow: hidden;">
+                            <img src="assets/images/project-food.png" alt="Food Waste Management Platform (NOGIRR)" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
 
                         <div>
-                            <span class="section-tag" style="margin-bottom: 0.5rem; font-weight: 700; color: #7F011F;">IoT & Hardware · 2025</span>
-                            <h2 style="font-family: var(--font-stone); font-size: 2rem; color: #0a0a0a; font-weight: 900; margin-bottom: 1rem;">Smart Cloth Management System</h2>
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                                <span class="section-tag" style="margin: 0; font-weight: 800; color: #7F011F;">Full-Stack Web App & Live Platform · 2025</span>
+                                <a href="https://nogirr.vercel.app/" target="_blank" class="btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem; font-weight: 800;">Visit Live App (nogirr.vercel.app) →</a>
+                            </div>
+
+                            <h2 style="font-family: var(--font-stone); font-size: 2.4rem; color: #0a0a0a; font-weight: 900; margin-bottom: 1.5rem;">Food Waste Management Platform (NOGIRR)</h2>
                             
-                            <div class="ptrl-detail-box" style="margin-bottom: 1.5rem; background: rgba(127,1,31,0.06); border: 2px solid #7F011F; border-radius: 12px; padding: 1.5rem;">
+                            <div class="ptrl-detail-box" style="margin-bottom: 2rem; background: rgba(127,1,31,0.06); border: 2.5px solid #7F011F; border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
                                 <div class="ptrl-detail-row">
-                                    <h4 style="color: #7F011F; font-weight: 700;">P — Problem Statement</h4>
-                                    <p style="color: #0a0a0a; font-weight: 700;">Managing fabric storage manually is time-consuming and risks textile damage due to undetected temperature, humidity, and gas buildup.</p>
+                                    <h3 style="color: #7F011F; font-weight: 900; font-size: 1.2rem; margin-bottom: 0.4rem;">P — Problem Statement & Background</h3>
+                                    <p style="color: #0a0a0a; font-weight: 700; font-size: 1rem; line-height: 1.6;">Organizations, restaurants, and individuals find it difficult to track surplus food resources efficiently, leading to massive avoidable food waste. Existing manual logs lack real-time donor-recipient matching, geolocation awareness, and automated notifications.</p>
                                 </div>
                                 <div class="ptrl-detail-row">
-                                    <h4 style="color: #7F011F; font-weight: 700;">T — Technology Stack</h4>
-                                    <p style="color: #0a0a0a; font-weight: 700;">ESP32 Microcontroller, Arduino, Embedded C++, DHT Sensors, Gas Sensors, Web Dashboard</p>
+                                    <h3 style="color: #7F011F; font-weight: 900; font-size: 1.2rem; margin-bottom: 0.4rem;">T — Technical Architecture & Stack</h3>
+                                    <p style="color: #0a0a0a; font-weight: 700; font-size: 1rem; line-height: 1.6;">Built using Next.js, React, Node.js, REST API endpoints, and deployed on Vercel infrastructure. Features real-time state updates, interactive maps, donor inventory tracking, and secure transaction workflows.</p>
                                 </div>
                                 <div class="ptrl-detail-row">
-                                    <h4 style="color: #7F011F; font-weight: 700;">R — Result & Solution</h4>
-                                    <p style="color: #0a0a0a; font-weight: 700;">Developed an automated IoT hardware system that continuously acquires sensor telemetry, triggers automated ventilation control, and visualizes real-time storage status on a responsive web portal.</p>
+                                    <h3 style="color: #7F011F; font-weight: 900; font-size: 1.2rem; margin-bottom: 0.4rem;">R — My Key Engineering Role & Implementation</h3>
+                                    <p style="color: #0a0a0a; font-weight: 700; font-size: 1rem; line-height: 1.6;">As the lead developer, I architected the full-stack database schema, designed the responsive user interface, implemented RESTful API route handlers, configured live geolocation search, and deployed the production web portal to Vercel.</p>
                                 </div>
                                 <div class="ptrl-detail-row">
-                                    <h4 style="color: #7F011F; font-weight: 700;">L — Key Learnings</h4>
-                                    <p style="color: #0a0a0a; font-weight: 700;">Gained hands-on experience in microcontroller sensor interfacing, real-time feedback loops, embedded C++, and IoT-to-web telemetry data flow.</p>
+                                    <h3 style="color: #7F011F; font-weight: 900; font-size: 1.2rem; margin-bottom: 0.4rem;">L — Key Technical Learnings & Skills Acquired</h3>
+                                    <p style="color: #0a0a0a; font-weight: 700; font-size: 1rem; line-height: 1.6;">Mastered modern Next.js client/server component boundaries, state synchronization across async web forms, production deployment strategies on Vercel, and API optimization.</p>
                                 </div>
                             </div>
 
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem;">
+                                <span class="project-tech-tag">Next.js</span>
+                                <span class="project-tech-tag">React</span>
+                                <span class="project-tech-tag">JavaScript</span>
+                                <span class="project-tech-tag">Node.js</span>
+                                <span class="project-tech-tag">REST API</span>
+                                <span class="project-tech-tag">Vercel Cloud</span>
+                            </div>
+
+                            <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+                                <a href="https://nogirr.vercel.app/" target="_blank" class="btn-primary" style="padding: 0.65rem 1.5rem; font-weight: 800;">Visit Live App (nogirr.vercel.app) →</a>
+                                <a href="https://github.com/suriya-raja" target="_blank" class="btn-secondary" style="padding: 0.65rem 1.5rem; font-weight: 800;">View Source on GitHub →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Project 2: Kingdom of Thrones Game -->
+                <div id="game" class="glass-card animate-up" style="padding: 3rem; background: #F5EBD0; border: 3.5px solid #7F011F; border-radius: 24px; color: #0a0a0a; scroll-margin-top: 6rem;">
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <div class="project-img-wrapper" style="height: 400px; border-radius: 16px; border: 3px solid #7F011F; overflow: hidden;">
+                            <img src="assets/images/project-game.png" alt="Kingdom of Thrones Game" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                                <span class="section-tag" style="margin: 0; font-weight: 800; color: #7F011F;">Game Development & OOP Architecture · 2026</span>
+                                <a href="https://github.com/suriya-raja" target="_blank" class="btn-secondary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem; font-weight: 800;">View on GitHub →</a>
+                            </div>
+
+                            <h2 style="font-family: var(--font-stone); font-size: 2.4rem; color: #0a0a0a; font-weight: 900; margin-bottom: 1.5rem;">Kingdom of Thrones Game</h2>
+                            
+                            <div class="ptrl-detail-box" style="margin-bottom: 2rem; background: rgba(127,1,31,0.06); border: 2.5px solid #7F011F; border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                                <div class="ptrl-detail-row">
+                                    <h3 style="color: #7F011F; font-weight: 900; font-size: 1.2rem; margin-bottom: 0.4rem;">P — Problem Statement & Background</h3>
+                                    <p style="color: #0a0a0a; font-weight: 700; font-size: 1rem; line-height: 1.6;">Designing an engaging strategy game requires smooth unit pathfinding algorithms, interactive UI feedback loops, real-time physics handling, and balanced kingdom resource management systems.</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h3 style="color: #7F011F; font-weight: 900; font-size: 1.2rem; margin-bottom: 0.4rem;">T — Technical Architecture & Stack</h3>
+                                    <p style="color: #0a0a0a; font-weight: 700; font-size: 1rem; line-height: 1.6;">Built using the Unity Game Engine, Object-Oriented C# scripting, custom state machines, NavMesh pathfinding, and Unity Physics Engine.</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h3 style="color: #7F011F; font-weight: 900; font-size: 1.2rem; margin-bottom: 0.4rem;">R — My Key Engineering Role & Implementation</h3>
+                                    <p style="color: #0a0a0a; font-weight: 700; font-size: 1rem; line-height: 1.6;">As the game developer, I designed the kingdom resource collection loops, unit spawning state logic, battle combat physics scripts, and interactive UI HUD interfaces in C#.</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h3 style="color: #7F011F; font-weight: 900; font-size: 1.2rem; margin-bottom: 0.4rem;">L — Key Technical Learnings & Skills Acquired</h3>
+                                    <p style="color: #0a0a0a; font-weight: 700; font-size: 1rem; line-height: 1.6;">Mastered Unity event loops, C# object-oriented design patterns, state machine state management, collision physics optimization, and UI event scripting.</p>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem;">
+                                <span class="project-tech-tag">Unity Engine</span>
+                                <span class="project-tech-tag">C# Scripting</span>
+                                <span class="project-tech-tag">Game Dev</span>
+                                <span class="project-tech-tag">OOP Architecture</span>
+                                <span class="project-tech-tag">Physics Engine</span>
+                            </div>
+
+                            <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+                                <a href="https://github.com/suriya-raja" target="_blank" class="btn-primary" style="padding: 0.65rem 1.5rem; font-weight: 800;">View Source on GitHub →</a>
+                                <a href="index.html#contact" class="btn-secondary" style="padding: 0.65rem 1.5rem; font-weight: 800;">Inquire Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Project 3: Tikki Topple Game -->
+                <div id="tikki" class="glass-card animate-up" style="padding: 3rem; background: #F5EBD0; border: 3.5px solid #7F011F; border-radius: 24px; color: #0a0a0a; scroll-margin-top: 6rem;">
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <div class="project-img-wrapper" style="height: 400px; border-radius: 16px; border: 3px solid #7F011F; overflow: hidden;">
+                            <img src="assets/images/project-tikki.png" alt="Tikki Topple Game" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                                <span class="section-tag" style="margin: 0; font-weight: 800; color: #7F011F;">Game Dev & 3D Strategy · 2026</span>
+                                <a href="https://tikki-topple.vercel.app/" target="_blank" class="btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem; font-weight: 800;">Visit Live App (tikki-topple.vercel.app) →</a>
+                            </div>
+
+                            <h2 style="font-family: var(--font-stone); font-size: 2.4rem; color: #0a0a0a; font-weight: 900; margin-bottom: 1.5rem;">Tikki Topple Game</h2>
+                            
+                            <div class="ptrl-detail-box" style="margin-bottom: 2rem; background: rgba(127,1,31,0.06); border: 2.5px solid #7F011F; border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                                <div class="ptrl-detail-row">
+                                    <h3 style="color: #7F011F; font-weight: 900; font-size: 1.2rem; margin-bottom: 0.4rem;">P — Problem Statement & Background</h3>
+                                    <p style="color: #0a0a0a; font-weight: 700; font-size: 1rem; line-height: 1.6;">Creating a strategic Tiki totem placement game with dynamic player action cards, opponent positioning mechanics, and tactical round-based scoring systems.</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h3 style="color: #7F011F; font-weight: 900; font-size: 1.2rem; margin-bottom: 0.4rem;">T — Technical Architecture & Stack</h3>
+                                    <p style="color: #0a0a0a; font-weight: 700; font-size: 1rem; line-height: 1.6;">Built using Unity Engine 3D, C# game scripts, custom 3D Tiki totem assets, turn-based card system architecture, and deployed live to Vercel web environment.</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h3 style="color: #7F011F; font-weight: 900; font-size: 1.2rem; margin-bottom: 0.4rem;">R — My Key Engineering Role & Implementation</h3>
+                                    <p style="color: #0a0a0a; font-weight: 700; font-size: 1rem; line-height: 1.6;">I designed and programmed the complete turn-based card play mechanics, calculated score multipliers based on totem positions, implemented 3D camera controls, and published the live web version.</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h3 style="color: #7F011F; font-weight: 900; font-size: 1.2rem; margin-bottom: 0.4rem;">L — Key Technical Learnings & Skills Acquired</h3>
+                                    <p style="color: #0a0a0a; font-weight: 700; font-size: 1rem; line-height: 1.6;">Gained hands-on expertise in 3D game loop design, turn-based state synchronization, dynamic card deck dealing algorithms, and web-to-game webGL deployment.</p>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem;">
+                                <span class="project-tech-tag">Unity 3D</span>
+                                <span class="project-tech-tag">C#</span>
+                                <span class="project-tech-tag">3D Strategy</span>
+                                <span class="project-tech-tag">Card Mechanics</span>
+                                <span class="project-tech-tag">Vercel WebGL</span>
+                            </div>
+
+                            <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+                                <a href="https://tikki-topple.vercel.app/" target="_blank" class="btn-primary" style="padding: 0.65rem 1.5rem; font-weight: 800;">Visit Live App (tikki-topple.vercel.app) →</a>
+                                <a href="https://github.com/suriya-raja" target="_blank" class="btn-secondary" style="padding: 0.65rem 1.5rem; font-weight: 800;">View Source on GitHub →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Project 4: Smart Cloth Management System -->
+                <div id="cloth" class="glass-card animate-up" style="padding: 3rem; background: #F5EBD0; border: 3.5px solid #7F011F; border-radius: 24px; color: #0a0a0a; scroll-margin-top: 6rem;">
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <div class="project-img-wrapper" style="height: 400px; border-radius: 16px; border: 3px solid #7F011F; overflow: hidden;">
+                            <img src="assets/images/project-cloth.png" alt="Smart Cloth Management System" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                                <span class="section-tag" style="margin: 0; font-weight: 800; color: #7F011F;">IoT & Hardware Systems · 2025</span>
+                                <a href="https://github.com/suriya-raja" target="_blank" class="btn-secondary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem; font-weight: 800;">View on GitHub →</a>
+                            </div>
+
+                            <h2 style="font-family: var(--font-stone); font-size: 2.4rem; color: #0a0a0a; font-weight: 900; margin-bottom: 1.5rem;">Smart Cloth Management System</h2>
+                            
+                            <div class="ptrl-detail-box" style="margin-bottom: 2rem; background: rgba(127,1,31,0.06); border: 2.5px solid #7F011F; border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                                <div class="ptrl-detail-row">
+                                    <h3 style="color: #7F011F; font-weight: 900; font-size: 1.2rem; margin-bottom: 0.4rem;">P — Problem Statement & Background</h3>
+                                    <p style="color: #0a0a0a; font-weight: 700; font-size: 1rem; line-height: 1.6;">Managing fabric storage manually is time-consuming and risks textile damage due to undetected temperature, humidity, and gas buildup in storage environments.</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h3 style="color: #7F011F; font-weight: 900; font-size: 1.2rem; margin-bottom: 0.4rem;">T — Technical Architecture & Stack</h3>
+                                    <p style="color: #0a0a0a; font-weight: 700; font-size: 1rem; line-height: 1.6;">Built around ESP32 Microcontroller hardware, Arduino IDE framework, Embedded C++, DHT11 temperature/humidity sensors, gas sensors, relay modules, and a responsive web monitoring dashboard.</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h3 style="color: #7F011F; font-weight: 900; font-size: 1.2rem; margin-bottom: 0.4rem;">R — My Key Engineering Role & Implementation</h3>
+                                    <p style="color: #0a0a0a; font-weight: 700; font-size: 1rem; line-height: 1.6;">I wired the hardware sensor components, programmed the microcontroller firmware in Embedded C++, calibrated feedback threshold triggers, and established WiFi telemetry data transmission to the web dashboard.</p>
+                                </div>
+                                <div class="ptrl-detail-row">
+                                    <h3 style="color: #7F011F; font-weight: 900; font-size: 1.2rem; margin-bottom: 0.4rem;">L — Key Technical Learnings & Skills Acquired</h3>
+                                    <p style="color: #0a0a0a; font-weight: 700; font-size: 1rem; line-height: 1.6;">Gained hands-on experience in microcontroller hardware interfacing, sensor sampling logic, relay control loops, embedded C++, and IoT-to-web telemetry data flow.</p>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem;">
                                 <span class="project-tech-tag">ESP32</span>
                                 <span class="project-tech-tag">Arduino</span>
-                                <span class="project-tech-tag">C++</span>
-                                <span class="project-tech-tag">IoT</span>
+                                <span class="project-tech-tag">Embedded C++</span>
+                                <span class="project-tech-tag">IoT Hardware</span>
                                 <span class="project-tech-tag">DHT Sensors</span>
                             </div>
 
-                            <div style="display: flex; gap: 1rem;">
-                                <a href="https://github.com/suriya-raja" target="_blank" class="btn-primary">View on GitHub →</a>
-                                <a href="index.html#contact" class="btn-secondary">Inquire Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Detailed Project 2: Food Waste Management Platform -->
-                <div class="glass-card animate-up" style="padding: 2.5rem; background: #F5EBD0; border: 3.5px solid #7F011F; border-radius: 18px; color: #0a0a0a;">
-                    <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
-                        <div class="project-img-wrapper" style="height: 320px; border-radius: 12px; border: 2px solid #7F011F;">
-                            <img src="assets/images/project-food.png" alt="Food Waste Management Platform">
-                        </div>
-
-                        <div>
-                            <span class="section-tag" style="margin-bottom: 0.5rem; font-weight: 700; color: #7F011F;">Web Development & Analytics · 2025</span>
-                            <h2 style="font-family: var(--font-stone); font-size: 2rem; color: #0a0a0a; font-weight: 900; margin-bottom: 1rem;">Food Waste Management Platform</h2>
-                            
-                            <div class="ptrl-detail-box" style="margin-bottom: 1.5rem; background: rgba(127,1,31,0.06); border: 2px solid #7F011F; border-radius: 12px; padding: 1.5rem;">
-                                <div class="ptrl-detail-row">
-                                    <h4 style="color: #7F011F; font-weight: 700;">P — Problem Statement</h4>
-                                    <p style="color: #0a0a0a; font-weight: 700;">Organizations and individuals find it difficult to track surplus food resources efficiently, leading to avoidable food waste.</p>
-                                </div>
-                                <div class="ptrl-detail-row">
-                                    <h4 style="color: #7F011F; font-weight: 700;">T — Technology Stack</h4>
-                                    <p style="color: #0a0a0a; font-weight: 700;">HTML5, CSS3, JavaScript, Python, MySQL, REST API</p>
-                                </div>
-                                <div class="ptrl-detail-row">
-                                    <h4 style="color: #7F011F; font-weight: 700;">R — Result & Solution</h4>
-                                    <p style="color: #0a0a0a; font-weight: 700;">Developed a responsive web platform that allows users to log surplus food items, track inventory in real time, run search queries, and manage donor-recipient transactions seamlessly.</p>
-                                </div>
-                                <div class="ptrl-detail-row">
-                                    <h4 style="color: #7F011F; font-weight: 700;">L — Key Learnings</h4>
-                                    <p style="color: #0a0a0a; font-weight: 700;">Significantly improved understanding of JavaScript DOM manipulation, MySQL database connectivity, CRUD operations, and responsive web design.</p>
-                                </div>
-                            </div>
-
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                                <span class="project-tech-tag">HTML/CSS</span>
-                                <span class="project-tech-tag">JavaScript</span>
-                                <span class="project-tech-tag">Python</span>
-                                <span class="project-tech-tag">MySQL</span>
-                                <span class="project-tech-tag">REST API</span>
-                            </div>
-
-                            <div style="display: flex; gap: 1rem;">
-                                <a href="https://github.com/suriya-raja" target="_blank" class="btn-primary">View on GitHub →</a>
-                                <a href="index.html#contact" class="btn-secondary">Inquire Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Detailed Project 3: Throne of Kingdom Game -->
-                <div class="glass-card animate-up" style="padding: 2.5rem; background: #F5EBD0; border: 3.5px solid #7F011F; border-radius: 18px; color: #0a0a0a;">
-                    <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
-                        <div class="project-img-wrapper" style="height: 320px; border-radius: 12px; border: 2px solid #7F011F;">
-                            <img src="assets/images/project-game.png" alt="Throne of Kingdom Game">
-                        </div>
-
-                        <div>
-                            <span class="section-tag" style="margin-bottom: 0.5rem; font-weight: 700; color: #7F011F;">Game Development & OOP · 2026</span>
-                            <h2 style="font-family: var(--font-stone); font-size: 2rem; color: #0a0a0a; font-weight: 900; margin-bottom: 1rem;">Throne of Kingdom Game</h2>
-                            
-                            <div class="ptrl-detail-box" style="margin-bottom: 1.5rem; background: rgba(127,1,31,0.06); border: 2px solid #7F011F; border-radius: 12px; padding: 1.5rem;">
-                                <div class="ptrl-detail-row">
-                                    <h4 style="color: #7F011F; font-weight: 700;">P — Problem Statement</h4>
-                                    <p style="color: #0a0a0a; font-weight: 700;">Designing engaging strategy game mechanics with smooth unit pathfinding, interactive UI, and balanced resource management systems.</p>
-                                </div>
-                                <div class="ptrl-detail-row">
-                                    <h4 style="color: #7F011F; font-weight: 700;">T — Technology Stack</h4>
-                                    <p style="color: #0a0a0a; font-weight: 700;">Unity Engine, C#, Game Design, Object-Oriented Programming (OOP), Physics Engine</p>
-                                </div>
-                                <div class="ptrl-detail-row">
-                                    <h4 style="color: #7F011F; font-weight: 700;">R — Result & Solution</h4>
-                                    <p style="color: #0a0a0a; font-weight: 700;">Developed an interactive strategy kingdom game featuring resource collection, kingdom expansion, unit spawning, and tactical battle mechanics.</p>
-                                </div>
-                                <div class="ptrl-detail-row">
-                                    <h4 style="color: #7F011F; font-weight: 700;">L — Key Learnings</h4>
-                                    <p style="color: #0a0a0a; font-weight: 700;">Mastered Unity game loop architecture, C# object-oriented design patterns, state machines, game physics, and interactive UI scripting.</p>
-                                </div>
-                            </div>
-
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                                <span class="project-tech-tag">Unity</span>
-                                <span class="project-tech-tag">C#</span>
-                                <span class="project-tech-tag">Game Dev</span>
-                                <span class="project-tech-tag">OOP</span>
-                            </div>
-
-                            <div style="display: flex; gap: 1rem;">
-                                <a href="https://github.com/suriya-raja" target="_blank" class="btn-primary">View on GitHub →</a>
-                                <a href="index.html#contact" class="btn-secondary">Inquire Details →</a>
+                            <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+                                <a href="https://github.com/suriya-raja" target="_blank" class="btn-primary" style="padding: 0.65rem 1.5rem; font-weight: 800;">View Source on GitHub →</a>
+                                <a href="index.html#contact" class="btn-secondary" style="padding: 0.65rem 1.5rem; font-weight: 800;">Inquire Details →</a>
                             </div>
                         </div>
                     </div>
