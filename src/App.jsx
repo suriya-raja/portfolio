@@ -7,66 +7,149 @@ import lanyardCustom from './assets/lanyard/lanyard-custom.jpg';
 
 /* ─────────────────────────────────────────────
    DATA
+/* ─────────────────────────────────────────────
+   MAGIC TRANSFORM CARD COMPONENT (3D Tilt Effect)
+───────────────────────────────────────────── */
+function MagicTransformCard({ code, title, skills }) {
+  const [rotateX, setRotateX] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
+
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - card.left - card.width / 2;
+    const y = e.clientY - card.top - card.height / 2;
+    setRotateX(-y / 16);
+    setRotateY(x / 16);
+  };
+
+  const handleMouseLeave = () => {
+    setRotateX(0);
+    setRotateY(0);
+  };
+
+  return (
+    <motion.div
+      className="skill-category-card magic-transform-card animate-up"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      animate={{ rotateX, rotateY }}
+      transition={{ type: 'spring', stiffness: 350, damping: 22 }}
+      style={{
+        perspective: 1000,
+        transformStyle: 'preserve-3d',
+        background: '#F5EBD0',
+        border: '3.5px solid #7F011F',
+        borderRadius: '18px',
+        boxShadow: '0 10px 30px rgba(127, 1, 31, 0.18)',
+      }}
+    >
+      <div className="skill-category-header" style={{ transform: 'translateZ(20px)' }}>
+        <div className="skill-category-header-left">
+          <div className="skill-icon-wrap" style={{ border: '2px solid #7F011F', background: 'rgba(127,1,31,0.12)', color: '#7F011F', fontWeight: 800 }}>{code}</div>
+          <h3 className="skill-category-title" style={{ fontWeight: 900, color: '#0a0a0a' }}>{title}</h3>
+        </div>
+        <span className="skill-category-count" style={{ border: '2px solid #7F011F', background: 'rgba(127,1,31,0.12)', color: '#7F011F', fontWeight: 800 }}>{skills.length} Points</span>
+      </div>
+      <div className="skill-badges-grid" style={{ transform: 'translateZ(15px)' }}>
+        {skills.map(s => (
+          <div key={s.name} className="skill-badge-item" style={{ background: 'rgba(127,1,31,0.06)', border: '2px solid #7F011F' }}>
+            <div className="skill-badge-info">
+              <span className="skill-badge-name" style={{ fontWeight: 800, color: '#0a0a0a' }}>{s.name}</span>
+              <span className="skill-badge-tier" style={{ fontWeight: 800, color: '#7F011F' }}>{s.tier}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   DATA (Requested Order: NOGIRR -> Kingdom of Thrones -> Tikki Topple -> Smart Cloth)
 ───────────────────────────────────────────── */
 const projects = [
+  {
+    id: 'food',
+    category: 'web',
+    title: 'Food Waste Management Platform (NOGIRR)',
+    badge: 'Web App & Live Platform',
+    img: '/assets/images/project-food.png',
+    liveUrl: 'https://nogirr.vercel.app/',
+    demo: 'https://nogirr.vercel.app/',
+    problem: 'Organizations and individuals find it difficult to track surplus food resources efficiently, leading to food waste.',
+    technology: 'Next.js, React, JavaScript, Node.js, REST API, Vercel',
+    result: 'Developed NOGIRR, a live web platform allowing users to log surplus food items, track inventory in real time, run search queries, and manage donor-recipient transactions seamlessly.',
+    learning: 'Mastered full-stack web architecture, live deployment on Vercel, geolocation search, and inventory state management.',
+    tags: ['Next.js', 'React', 'JavaScript', 'Node.js', 'REST API'],
+    github: 'https://github.com/suriya-raja',
+    ptrl: [
+      { label: 'Problem:', text: 'Tracking surplus food records manually leads to food waste.' },
+      { label: 'Tech:', text: 'Next.js, React, Node.js, Vercel, REST API' },
+      { label: 'Result:', text: 'Live NOGIRR portal for real-time surplus food tracking.' },
+      { label: 'Learning:', text: 'Full-stack web deployment & inventory state API.' },
+    ],
+  },
+  {
+    id: 'game',
+    category: 'game',
+    title: 'Kingdom of Thrones Game',
+    badge: 'Game Dev & OOP',
+    img: '/assets/images/project-game.png',
+    liveUrl: null,
+    demo: '#',
+    problem: 'Designing an engaging strategy game mechanics with smooth unit pathfinding, interactive UI, and resource management systems.',
+    technology: 'Unity Engine, C#, Game Design, Object-Oriented Programming (OOP), Physics Engine',
+    result: 'Developed an interactive strategy kingdom game featuring resource collection, kingdom expansion, unit spawning, and tactical battle mechanics.',
+    learning: 'Mastered Unity game loop architecture, C# object-oriented design patterns, state machines, game physics, and interactive UI scripting.',
+    tags: ['Unity', 'C#', 'Game Dev', 'OOP'],
+    github: 'https://github.com/suriya-raja',
+    ptrl: [
+      { label: 'Problem:', text: 'Designing engaging strategy mechanics & resource balance.' },
+      { label: 'Tech:', text: 'Unity Engine, C#, Game Design, OOP' },
+      { label: 'Result:', text: 'Interactive strategy game with kingdom expansion & resource systems.' },
+      { label: 'Learning:', text: 'Unity event loops, C# state machines & game physics.' },
+    ],
+  },
+  {
+    id: 'tikki',
+    category: 'game',
+    title: 'Tikki Topple Game',
+    badge: 'Game Dev & 3D Strategy',
+    img: '/assets/images/project-tikki.png',
+    liveUrl: null,
+    demo: '#',
+    problem: 'Designing a strategic Tiki totem placement game with dynamic player action cards, opponent positioning, and tactical round scoring.',
+    technology: 'Unity Engine, C#, 3D Rendering, Game State Logic',
+    result: 'Developed Tikki Topple, a strategy game featuring 3D totem aesthetics, action cards, opponent placement, and round-based scoring loops.',
+    learning: 'Gained hands-on experience in turn-based game state management, 3D camera controls, card-driven game loops, and UI turn feedback.',
+    tags: ['Unity', 'C#', '3D Game', 'Strategy'],
+    github: 'https://github.com/suriya-raja',
+    ptrl: [
+      { label: 'Problem:', text: 'Tactical totem strategy & card-driven game mechanics.' },
+      { label: 'Tech:', text: 'Unity Engine, C#, 3D Game Loop' },
+      { label: 'Result:', text: 'Strategic 3D Tikki Topple game with card play.' },
+      { label: 'Learning:', text: 'Turn-based state architecture & 3D camera logic.' },
+    ],
+  },
   {
     id: 'cloth',
     category: 'iot',
     title: 'Smart Cloth Management System',
     badge: 'IoT & Hardware',
     img: '/assets/images/project-cloth.png',
+    liveUrl: null,
+    demo: '#',
     problem: 'Managing fabric storage manually is time-consuming and risks textile damage due to undetected humidity and gas buildup.',
     technology: 'ESP32 Microcontroller, Arduino, Embedded C++, DHT Sensors, Gas Sensors, Web Dashboard',
     result: 'Developed an automated IoT hardware system that continuously acquires sensor telemetry, triggers automated ventilation control, and visualizes real-time storage status on a responsive web portal.',
     learning: 'Gained hands-on experience in microcontroller sensor interfacing, real-time feedback loops, embedded C++, and IoT-to-web telemetry data flow.',
     tags: ['ESP32', 'Arduino', 'C++', 'IoT'],
     github: 'https://github.com/suriya-raja',
-    demo: '#',
     ptrl: [
       { label: 'Problem:', text: 'Manual garment storage risks fabric damage from humidity.' },
       { label: 'Tech:', text: 'ESP32, Arduino, Embedded C++, Sensors' },
       { label: 'Result:', text: 'Automated IoT system with live web telemetry dashboard.' },
       { label: 'Learning:', text: 'Embedded sensor connectivity & feedback loops.' },
-    ],
-  },
-  {
-    id: 'food',
-    category: 'web',
-    title: 'Food Waste Management Platform',
-    badge: 'Web Development',
-    img: '/assets/images/project-food.png',
-    problem: 'Organizations and individuals find it difficult to track surplus food resources efficiently, leading to food waste.',
-    technology: 'HTML5, CSS3, JavaScript, Python, MySQL, REST API',
-    result: 'Developed a responsive web platform that allows users to log surplus food items, track inventory in real time, run search queries, and manage donor-recipient transactions seamlessly.',
-    learning: 'Significantly improved understanding of JavaScript DOM manipulation, MySQL database connectivity, CRUD operations, and responsive web design.',
-    tags: ['HTML/CSS', 'JavaScript', 'Python', 'MySQL'],
-    github: 'https://github.com/suriya-raja',
-    demo: '#',
-    ptrl: [
-      { label: 'Problem:', text: 'Tracking surplus food records manually leads to waste.' },
-      { label: 'Tech:', text: 'HTML, CSS, JavaScript, Python, MySQL' },
-      { label: 'Result:', text: 'Web application with live inventory tracking & CRUD management.' },
-      { label: 'Learning:', text: 'JS DOM manipulation, MySQL queries & REST architecture.' },
-    ],
-  },
-  {
-    id: 'game',
-    category: 'game',
-    title: 'Throne of Kingdom Game',
-    badge: 'Game Development',
-    img: '/assets/images/project-game.png',
-    problem: 'Designing an engaging strategy game mechanics with smooth unit pathfinding, interactive UI, and resource management systems.',
-    technology: 'Unity Engine, C#, Game Design, Object-Oriented Programming (OOP), Physics Engine',
-    result: 'Developed an interactive 2D/3D strategy kingdom game featuring resource collection, kingdom expansion, unit spawning, and tactical battle mechanics.',
-    learning: 'Mastered Unity game loop architecture, C# object-oriented design patterns, state machines, game physics, and interactive UI scripting.',
-    tags: ['Unity', 'C#', 'Game Dev'],
-    github: 'https://github.com/suriya-raja',
-    demo: '#',
-    ptrl: [
-      { label: 'Problem:', text: 'Designing engaging strategy mechanics & resource balance.' },
-      { label: 'Tech:', text: 'Unity Engine, C#, Game Design, OOP' },
-      { label: 'Result:', text: 'Interactive strategy game with kingdom expansion & resource systems.' },
-      { label: 'Learning:', text: 'Unity event loops, C# state machines & game physics.' },
     ],
   },
 ];
@@ -137,6 +220,7 @@ function showToast(message) {
 ───────────────────────────────────────────── */
 export default function App() {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const [modalProject, setModalProject] = useState(null);
   const [navScrolled, setNavScrolled] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
@@ -408,25 +492,7 @@ export default function App() {
                     ]
                   },
                 ].map(({ code, title, skills }) => (
-                  <div key={title} className="skill-category-card animate-up">
-                    <div className="skill-category-header">
-                      <div className="skill-category-header-left">
-                        <div className="skill-icon-wrap">{code}</div>
-                        <h3 className="skill-category-title">{title}</h3>
-                      </div>
-                      <span className="skill-category-count">{skills.length} Skills</span>
-                    </div>
-                    <div className="skill-badges-grid">
-                      {skills.map(s => (
-                        <div key={s.name} className="skill-badge-item">
-                          <div className="skill-badge-info">
-                            <span className="skill-badge-name">{s.name}</span>
-                            <span className="skill-badge-tier">{s.tier}</span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  <MagicTransformCard key={title} code={code} title={title} skills={skills} />
                 ))}
               </div>
             </div>
@@ -456,34 +522,103 @@ export default function App() {
                 <p className="section-subtitle">Structured technical breakdown demonstrating Problem, Technology, Result, and Learning.</p>
               </div>
               <div className="projects-filter animate-up">
-                {[['all','All Projects'],['iot','IoT & Hardware'],['web','Web Dev'],['game','Game Dev']].map(([f,lbl]) => (
-                  <button key={f} className={`filter-btn${activeFilter===f?' active':''}`} data-filter={f} onClick={() => setActiveFilter(f)}>{lbl}</button>
+                {[['all','All Projects'],['web','Web Dev'],['game','Game Dev'],['iot','IoT & Hardware']].map(([f,lbl]) => (
+                  <button key={f} className={`filter-btn${activeFilter===f?' active':''}`} data-filter={f} onClick={() => { setActiveFilter(f); setActiveProjectIndex(0); }}>{lbl}</button>
                 ))}
               </div>
-              <div className="projects-grid">
-                {filteredProjects.map(p => (
-                  <div key={p.id} className="glass-card project-card animate-up" onClick={(e) => { if (!e.target.closest('a[target="_blank"]')) setModalProject(p); }}>
-                    <div className="project-img-wrapper">
-                      <img src={p.img} alt={p.title} />
-                      <span className="project-overlay-badge">{p.badge}</span>
-                    </div>
-                    <div className="project-content">
-                      <div>
-                        <h3 className="project-title">{p.title}</h3>
-                        <div className="ptrl-summary-list">
-                          {p.ptrl.map(row => <div key={row.label} className="ptrl-item"><strong>{row.label}</strong>{row.text}</div>)}
-                        </div>
-                        <div className="project-tech-tags">
-                          {p.tags.map(t => <span key={t} className="project-tech-tag">{t}</span>)}
-                        </div>
-                      </div>
-                      <div className="project-actions">
-                        <button className="btn-link">P-T-R-L Details →</button>
-                        <a href={p.github} target="_blank" rel="noreferrer" className="btn-link">GitHub →</a>
-                      </div>
-                    </div>
+
+              {/* SINGLE PROJECT SCROLL CAROUSEL */}
+              <div className="single-project-carousel-wrap animate-up" style={{ marginTop: '2rem' }}>
+                <div className="carousel-controls-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', gap: '1rem', flexWrap: 'wrap' }}>
+                  <div className="carousel-counter" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.85rem', fontWeight: 800, color: '#7F011F', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+                    Project {String(activeProjectIndex + 1).padStart(2, '0')} / {String(filteredProjects.length).padStart(2, '0')}
                   </div>
-                ))}
+                  <div className="carousel-nav-buttons" style={{ display: 'flex', gap: '0.75rem' }}>
+                    <button
+                      className="btn-secondary"
+                      style={{ padding: '0.5rem 1.25rem', fontSize: '0.85rem', fontWeight: 800 }}
+                      onClick={() => setActiveProjectIndex((prev) => (prev - 1 + filteredProjects.length) % filteredProjects.length)}
+                    >
+                      ← Previous Project
+                    </button>
+                    <button
+                      className="btn-primary"
+                      style={{ padding: '0.5rem 1.25rem', fontSize: '0.85rem', fontWeight: 800 }}
+                      onClick={() => setActiveProjectIndex((prev) => (prev + 1) % filteredProjects.length)}
+                    >
+                      Next Project →
+                    </button>
+                  </div>
+                </div>
+
+                {/* Active Project Card */}
+                {filteredProjects[activeProjectIndex] && (() => {
+                  const p = filteredProjects[activeProjectIndex];
+                  return (
+                    <motion.div
+                      key={p.id}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.45, ease: 'easeOut' }}
+                      className="glass-card project-card single-project-card"
+                      style={{ background: '#F5EBD0', border: '3.5px solid #7F011F', borderRadius: '20px', padding: '2.5rem', boxShadow: '0 12px 35px rgba(127,1,31,0.2)' }}
+                      onClick={(e) => { if (!e.target.closest('a[target="_blank"]')) setModalProject(p); }}
+                    >
+                      <div className="project-grid-single" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem', alignItems: 'center' }}>
+                        <div className="project-img-wrapper" style={{ height: '340px', borderRadius: '16px', border: '2.5px solid #7F011F', overflow: 'hidden' }}>
+                          <img src={p.img} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                          <span className="project-overlay-badge" style={{ background: '#7F011F', color: '#F5EBD0', fontWeight: 800 }}>{p.badge}</span>
+                        </div>
+                        <div className="project-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+                          <div>
+                            <h3 className="project-title" style={{ fontSize: '1.8rem', fontWeight: 900, color: '#0a0a0a', marginBottom: '1rem' }}>{p.title}</h3>
+                            <div className="ptrl-summary-list" style={{ marginBottom: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+                              {p.ptrl.map(row => (
+                                <div key={row.label} className="ptrl-item" style={{ fontSize: '0.95rem', color: '#0a0a0a', fontWeight: 700 }}>
+                                  <strong style={{ color: '#7F011F', marginRight: '0.4rem' }}>{row.label}</strong>
+                                  {row.text}
+                                </div>
+                              ))}
+                            </div>
+                            <div className="project-tech-tags" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.75rem' }}>
+                              {p.tags.map(t => <span key={t} className="project-tech-tag">{t}</span>)}
+                            </div>
+                          </div>
+                          <div className="project-actions" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                            {p.liveUrl ? (
+                              <a href={p.liveUrl} target="_blank" rel="noreferrer" className="btn-primary" style={{ padding: '0.6rem 1.25rem', fontSize: '0.85rem', fontWeight: 800 }}>
+                                Visit Live App (nogirr.vercel.app) →
+                              </a>
+                            ) : null}
+                            <button className="btn-link" style={{ fontWeight: 800 }}>P-T-R-L Details →</button>
+                            <a href={p.github} target="_blank" rel="noreferrer" className="btn-link" style={{ fontWeight: 800 }}>GitHub →</a>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })()}
+
+                {/* Dot Indicators */}
+                <div className="carousel-dots" style={{ display: 'flex', justifyContent: 'center', gap: '0.65rem', marginTop: '1.5rem' }}>
+                  {filteredProjects.map((p, idx) => (
+                    <button
+                      key={p.id}
+                      aria-label={`Go to project ${idx + 1}`}
+                      onClick={() => setActiveProjectIndex(idx)}
+                      style={{
+                        width: idx === activeProjectIndex ? '32px' : '12px',
+                        height: '12px',
+                        borderRadius: '6px',
+                        background: idx === activeProjectIndex ? '#7F011F' : 'rgba(127, 1, 31, 0.25)',
+                        border: '1.5px solid #7F011F',
+                        transition: 'all 0.3s ease',
+                        cursor: 'pointer',
+                      }}
+                    />
+                  ))}
+                </div>
               </div>
               <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
                 <a href="projects.html" className="btn-secondary">View Projects Archive →</a>
