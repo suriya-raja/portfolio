@@ -298,9 +298,9 @@ export default function App() {
               {[
                 { id: 'hero', label: 'Home' },
                 { id: 'about', label: 'About' },
-                { id: 'education', label: 'Education' },
                 { id: 'skills', label: 'Skills' },
                 { id: 'projects', label: 'Projects' },
+                { id: 'education', label: 'Education' },
                 { id: 'achievements', label: 'Achievements' },
                 { id: 'contact', label: 'Connect' },
               ].map(({ id, label }) => (
@@ -543,59 +543,6 @@ export default function App() {
           </section>
         </ScrollZoomSection>
 
-        {/* ═══ 2.5 EDUCATION (WITH SCROLL ZOOM) ═══ */}
-        <ScrollZoomSection id="education" className="py-12">
-          <section className="section" style={{ padding: '4rem 0' }}>
-            <div className="container">
-              <div className="section-header animate-up">
-                <span className="section-tag">02 / Academic Journey</span>
-                <motion.h2
-                  className="section-title"
-                  initial={{ WebkitTextStroke: "2.5px #7F011F", color: "rgba(0,0,0,0)", opacity: 0, y: 10 }}
-                  whileInView={{
-                    WebkitTextStroke: ["2.5px #7F011F", "2.5px #7F011F", "1.5px #7F011F"],
-                    color: ["rgba(0,0,0,0)", "rgba(0,0,0,0)", "#0a0a0a"],
-                    opacity: [0, 1, 1],
-                    y: [10, 0, 0]
-                  }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  transition={{ duration: 1.5, times: [0, 0.45, 1], ease: "easeInOut" }}
-                >
-                  Education
-                </motion.h2>
-                <p className="section-subtitle">Academic milestones from secondary education to undergraduate computer science engineering.</p>
-              </div>
-
-              <div className="education-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
-                {educationList.map((edu) => (
-                  <div key={edu.id} className="glass-card animate-up" style={{ padding: '2rem', background: '#F5EBD0', border: '3.5px solid #7F011F', borderRadius: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                    <div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                        <span className="section-tag" style={{ margin: 0, fontWeight: 800, color: '#7F011F' }}>{edu.badge}</span>
-                        <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#F5EBD0', background: '#7F011F', padding: '0.25rem 0.75rem', borderRadius: '20px', border: '1.5px solid #7F011F' }}>{edu.timeline}</span>
-                      </div>
-                      <h3 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0a0a0a', fontFamily: 'var(--font-stone)', marginBottom: '0.5rem' }}>{edu.institution}</h3>
-                      <h4 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#7F011F', marginBottom: '1rem' }}>{edu.degree}</h4>
-                      <p style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0a0a0a', lineHeight: 1.6, marginBottom: '1.25rem' }}>{edu.description}</p>
-                    </div>
-
-                    <div style={{ background: 'rgba(127,1,31,0.06)', border: '2px solid #7F011F', borderRadius: '12px', padding: '1rem' }}>
-                      <strong style={{ display: 'block', fontSize: '0.85rem', color: '#7F011F', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Key Highlights:</strong>
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-                        {edu.highlights.map((item) => (
-                          <span key={item} style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0a0a0a', background: '#F5EBD0', border: '1.5px solid #7F011F', padding: '0.2rem 0.5rem', borderRadius: '6px' }}>
-                            {item}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        </ScrollZoomSection>
-
         {/* ═══ 3. SKILLS (WITH SCROLL ZOOM) ═══ */}
         <ScrollZoomSection id="skills" className="py-12">
           <section className="section" style={{ padding: '4rem 0' }}>
@@ -741,6 +688,59 @@ export default function App() {
               </div>
               <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
                 <a href="projects.html" className="btn-secondary">View Projects Archive →</a>
+              </div>
+            </div>
+          </section>
+        </ScrollZoomSection>
+
+        {/* ═══ 4.5 EDUCATION (WITH SCROLL ZOOM) ═══ */}
+        <ScrollZoomSection id="education" className="py-12">
+          <section className="section" style={{ padding: '4rem 0' }}>
+            <div className="container">
+              <div className="section-header animate-up">
+                <span className="section-tag">04 / Academic Journey</span>
+                <motion.h2
+                  className="section-title"
+                  initial={{ WebkitTextStroke: "2.5px #7F011F", color: "rgba(0,0,0,0)", opacity: 0, y: 10 }}
+                  whileInView={{
+                    WebkitTextStroke: ["2.5px #7F011F", "2.5px #7F011F", "1.5px #7F011F"],
+                    color: ["rgba(0,0,0,0)", "rgba(0,0,0,0)", "#0a0a0a"],
+                    opacity: [0, 1, 1],
+                    y: [10, 0, 0]
+                  }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 1.5, times: [0, 0.45, 1], ease: "easeInOut" }}
+                >
+                  Education
+                </motion.h2>
+                <p className="section-subtitle">Academic milestones from secondary education to undergraduate computer science engineering.</p>
+              </div>
+
+              <div className="education-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
+                {educationList.map((edu) => (
+                  <div key={edu.id} className="glass-card animate-up" style={{ padding: '2rem', background: '#F5EBD0', border: '3.5px solid #7F011F', borderRadius: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                    <div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                        <span className="section-tag" style={{ margin: 0, fontWeight: 800, color: '#7F011F' }}>{edu.badge}</span>
+                        <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#F5EBD0', background: '#7F011F', padding: '0.25rem 0.75rem', borderRadius: '20px', border: '1.5px solid #7F011F' }}>{edu.timeline}</span>
+                      </div>
+                      <h3 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0a0a0a', fontFamily: 'var(--font-stone)', marginBottom: '0.5rem' }}>{edu.institution}</h3>
+                      <h4 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#7F011F', marginBottom: '1rem' }}>{edu.degree}</h4>
+                      <p style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0a0a0a', lineHeight: 1.6, marginBottom: '1.25rem' }}>{edu.description}</p>
+                    </div>
+
+                    <div style={{ background: 'rgba(127,1,31,0.06)', border: '2px solid #7F011F', borderRadius: '12px', padding: '1rem' }}>
+                      <strong style={{ display: 'block', fontSize: '0.85rem', color: '#7F011F', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Key Highlights:</strong>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                        {edu.highlights.map((item) => (
+                          <span key={item} style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0a0a0a', background: '#F5EBD0', border: '1.5px solid #7F011F', padding: '0.2rem 0.5rem', borderRadius: '6px' }}>
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
