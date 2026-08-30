@@ -120,13 +120,13 @@ body {
 
 .section-tag {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.3em;
   color: #7F011F;
   margin-bottom: 0.75rem;
   display: block;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .section-title {
@@ -140,11 +140,11 @@ body {
 
 .section-subtitle {
   font-family: var(--font-sans);
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: #7F011F;
   max-width: 680px;
   margin: 0.75rem auto 0;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 /* --- Glassmorphism Card --- */
@@ -434,17 +434,17 @@ body {
 }
 
 .hero-info-left .label {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.25em;
   color: #7F011F;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .hero-info-left .desc {
-  font-size: 0.85rem;
-  font-weight: 400;
-  color: rgba(10, 10, 10, 0.75);
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #0a0a0a;
   line-height: 1.6;
 }
 
@@ -459,17 +459,17 @@ body {
 .hero-info-right .year {
   font-family: var(--font-stone);
   font-size: 2.25rem;
-  font-weight: 700;
+  font-weight: 900;
   color: #0a0a0a;
   line-height: 1;
 }
 
 .hero-info-right .label {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.25em;
   color: #7F011F;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 /* --- ABOUT SECTION --- */
@@ -682,18 +682,18 @@ body {
 }
 
 .skill-badge-name {
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 800;
   color: #0a0a0a;
   letter-spacing: 0.02em;
 }
 
 .skill-badge-tier {
-  font-size: 0.625rem;
+  font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: #7F011F;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 /* --- PROJECTS SECTION WITH P-T-R-L FORMULA --- */
@@ -818,14 +818,15 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.project-tech-tag {
-  font-size: 0.7rem;
-  padding: 0.25rem 0.65rem;
-  border-radius: 6px;
-  background: rgba(127, 1, 31, 0.12);
-  border: 1.5px solid #7F011F;
+.project-tech-tag, .skill-tag {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  background: #F5EBD0;
+  border: 2px solid #7F011F;
   color: #0a0a0a;
-  font-weight: 600;
+  font-weight: 800;
+  display: inline-block;
 }
 
 .project-actions {

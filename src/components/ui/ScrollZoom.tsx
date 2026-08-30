@@ -24,11 +24,13 @@ export const ScrollZoomSection = ({ children, id, className = "" }) => {
         style={{
           scale,
           borderRadius,
-          boxShadow: "0 20px 40px rgba(127, 1, 31, 0.2)",
+          boxShadow: "0 24px 48px rgba(127, 1, 31, 0.25)",
           borderColor: "#7F011F",
+          borderWidth: "3.5px",
+          borderStyle: "solid",
           background: "#F5EBD0",
         }}
-        className="w-full h-full overflow-hidden border-2"
+        className="w-full h-full overflow-hidden"
       >
         {children}
       </motion.div>
