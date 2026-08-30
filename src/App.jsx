@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Lanyard from './components/Lanyard/Lanyard';
 import { ScrollZoomSection } from './components/ui/ScrollZoom';
+import { StrokeFillHeading } from './components/ui/StrokeFill';
 import suriyaPhoto from './assets/suriya-photo.jpg';
 import lanyardCustom from './assets/lanyard/lanyard-custom.jpg';
 
@@ -227,15 +228,10 @@ export default function App() {
             {/* Text Column */}
             <div className="hero-headline-wrap">
               <span className="hero-greeting fade-up">HELLO, I'M SURIYA RAJA</span>
-              <h1 className="hero-title">
-                <div className="hero-char-wrap">
-                  {'SURIYA'.split('').map((c, i) => <span key={i} className="hero-char" style={{ transform: 'translateY(0)', opacity: 1, color: '#0a0a0a' }}>{c}</span>)}
-                </div>
-                <br />
-                <div className="hero-char-wrap">
-                  {'RAJA'.split('').map((c, i) => <span key={i} className="hero-char" style={{ transform: 'translateY(0)', opacity: 1, color: '#7F011F' }}>{c}</span>)}
-                </div>
-              </h1>
+              <div className="hero-title-stroke-wrap my-2" style={{ maxWidth: '650px' }}>
+                <StrokeFillHeading text="SURIYA" duration={2.2} strokeColor="#7F011F" fillColor="#0a0a0a" viewBox="0 0 700 120" fontSize="5.8rem" />
+                <StrokeFillHeading text="RAJA" duration={2.2} strokeColor="#7F011F" fillColor="#7F011F" viewBox="0 0 700 120" fontSize="5.8rem" />
+              </div>
               <h2 className="hero-subtitle fade-up">B.Tech CSE 2nd Year Student | Python Enthusiast | Aspiring ML Engineer</h2>
               <p className="hero-description fade-up">
                 I am a second-year Computer Science student at Lovely Professional University passionate about machine learning, artificial intelligence, and software development. I enjoy building practical projects and continuously improving my technical skills.
@@ -280,7 +276,7 @@ export default function App() {
             <div className="container">
               <div className="section-header animate-up">
                 <span className="section-tag">01 / Introduction</span>
-                <h2 className="section-title">About Me</h2>
+                <StrokeFillHeading text="ABOUT ME" duration={2.0} strokeColor="#7F011F" fillColor="#0a0a0a" viewBox="0 0 800 120" fontSize="4.2rem" />
                 <p className="section-subtitle">A concise professional overview of my academic journey and technical aspirations.</p>
               </div>
               <div className="about-grid">
@@ -315,7 +311,7 @@ export default function App() {
             <div className="container">
               <div className="section-header animate-up">
                 <span className="section-tag">02 / Technical Stack</span>
-                <h2 className="section-title">Skills & Technologies</h2>
+                <StrokeFillHeading text="SKILLS & TECH" duration={2.0} strokeColor="#7F011F" fillColor="#0a0a0a" viewBox="0 0 950 120" fontSize="3.8rem" />
                 <p className="section-subtitle">Core technical proficiencies and development tools across AI, software, and systems.</p>
               </div>
               <div className="skills-grid">
@@ -390,7 +386,7 @@ export default function App() {
             <div className="container">
               <div className="section-header animate-up">
                 <span className="section-tag">03 / Core Showcase</span>
-                <h2 className="section-title">Projects (P → T → R → L)</h2>
+                <StrokeFillHeading text="PROJECTS SHOWCASE" duration={2.0} strokeColor="#7F011F" fillColor="#0a0a0a" viewBox="0 0 950 120" fontSize="3.6rem" />
                 <p className="section-subtitle">Structured technical breakdown demonstrating Problem, Technology, Result, and Learning.</p>
               </div>
               <div className="projects-filter animate-up">
@@ -436,7 +432,7 @@ export default function App() {
             <div className="container">
               <div className="section-header animate-up">
                 <span className="section-tag">04 / Connect With Me</span>
-                <h2 className="section-title">Get In Touch</h2>
+                <StrokeFillHeading text="GET IN TOUCH" duration={2.0} strokeColor="#7F011F" fillColor="#0a0a0a" viewBox="0 0 800 120" fontSize="4.2rem" />
                 <p className="section-subtitle">Let's connect for machine learning opportunities, tech discussions, or project collaborations.</p>
               </div>
               <div className="contact-grid">
