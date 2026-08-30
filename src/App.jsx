@@ -115,9 +115,9 @@ const educationList = [
     degree: 'Class 12 (Higher Secondary Senior Certificate)',
     timeline: 'Graduated 2024',
     badge: 'Class 12 · Higher Secondary',
-    status: 'Completed with Specialization in PCM & Computer Science',
-    description: 'Developed a solid foundation in Advanced Mathematics, Physics, Chemistry, and Computer Science Principles, fostering strong analytical logic and problem-solving skills.',
-    highlights: ['Higher Mathematics & Calculus', 'Physics & Analytical Reasoning', 'Computer Science Fundamentals', 'Algorithmic Problem Solving']
+    status: 'Completed with Specialization in PCMB (Physics, Chemistry, Mathematics & Biology)',
+    description: 'Developed a solid foundation in Advanced Mathematics, Physics, Chemistry, and Biology Principles, fostering strong analytical logic, scientific reasoning, and problem-solving skills.',
+    highlights: ['Higher Mathematics & Calculus', 'Physics & Analytical Reasoning', 'Biology & Scientific Methodology', 'Algorithmic Problem Solving']
   },
   {
     id: 'vikaasa',
@@ -136,40 +136,48 @@ const educationList = [
 ───────────────────────────────────────────── */
 const achievementsList = [
   {
-    id: 'cert-1',
-    title: 'Machine Learning & Artificial Intelligence Specialization',
-    issuer: 'Professional Specialization Certification',
-    date: '2025',
-    category: 'Certification',
-    description: 'Comprehensive study and practical application of Python, supervised & unsupervised ML algorithms, model evaluation, and neural network concepts.',
-    tags: ['Python', 'Machine Learning', 'AI Models', 'Data Analysis']
+    id: 'cert-infosys-1',
+    title: 'Introduction to Artificial Intelligence',
+    issuer: 'Infosys Springboard',
+    date: 'April 2, 2026',
+    category: 'Official Certification',
+    img: '/assets/images/cert-infosys-ai-1.png',
+    verifyUrl: 'https://verify.onwingspan.com',
+    description: 'Course Completion Certificate awarded to Suriya Raja for successfully completing Introduction to Artificial Intelligence issued by Infosys Springboard on April 2, 2026.',
+    tags: ['Infosys Springboard', 'Artificial Intelligence', 'Machine Learning', 'April 2026']
   },
   {
-    id: 'cert-2',
-    title: 'Full-Stack Web Engineering',
-    issuer: 'Modern Web Standards & Cloud Deployment',
-    date: '2025',
-    category: 'Certification',
-    description: 'Demonstrated competence in Next.js, React, Node.js, RESTful API design, database CRUD architecture, and cloud deployment on Vercel.',
-    tags: ['Next.js', 'React', 'Node.js', 'Vercel']
+    id: 'cert-infosys-2',
+    title: 'Artificial Intelligence Foundations & Applications',
+    issuer: 'Infosys Springboard',
+    date: 'April 2, 2026',
+    category: 'Official Certification',
+    img: '/assets/images/cert-infosys-ai-2.png',
+    verifyUrl: 'https://verify.onwingspan.com',
+    description: 'Professional course completion certificate in Artificial Intelligence fundamentals and model applications issued by Infosys Springboard on April 2, 2026.',
+    tags: ['Infosys Springboard', 'AI Fundamentals', 'Neural Networks', 'April 2026']
   },
   {
-    id: 'cert-3',
+    id: 'cert-iot',
     title: 'IoT Telemetry & Embedded Systems Distinction',
-    issuer: 'Hardware System Project Award',
-    date: '2025',
-    category: 'Achievement',
+    issuer: 'Hardware Systems Architecture',
+    date: '2026',
+    category: 'Project Distinction',
+    img: null,
+    verifyUrl: null,
     description: 'Designed and deployed real-time ESP32 microcontroller telemetry sensor array with automated ventilation feedback loops.',
-    tags: ['ESP32', 'Embedded C++', 'IoT Sensors', 'Telemetry']
+    tags: ['ESP32', 'Embedded C++', 'IoT Sensors', '2026']
   },
   {
-    id: 'cert-4',
+    id: 'cert-unity',
     title: 'Unity 3D Game Mechanics & OOP Architecture',
-    issuer: 'Game Development Showcase',
+    issuer: 'Game Systems Showcase',
     date: '2026',
-    category: 'Achievement',
+    category: 'Project Distinction',
+    img: null,
+    verifyUrl: null,
     description: 'Architected Object-Oriented C# game loops, state machines, turn-based card logic, and 3D rendering for strategy games.',
-    tags: ['Unity', 'C#', '3D Game Loop', 'OOP']
+    tags: ['Unity 3D', 'C#', 'Game Loop', '2026']
   }
 ];
 
@@ -548,7 +556,7 @@ export default function App() {
           <section className="section" style={{ padding: '4rem 0' }}>
             <div className="container">
               <div className="section-header animate-up">
-                <span className="section-tag">04 / Core Showcase</span>
+                <span className="section-tag">03 / Core Showcase</span>
                 <motion.h2
                   className="section-title"
                   initial={{ WebkitTextStroke: "2.5px #7F011F", color: "rgba(0,0,0,0)", opacity: 0, y: 10 }}
@@ -689,17 +697,31 @@ export default function App() {
                         <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#F5EBD0', background: '#7F011F', padding: '0.25rem 0.75rem', borderRadius: '12px' }}>{item.category}</span>
                         <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#7F011F' }}>{item.date}</span>
                       </div>
+
+                      {item.img ? (
+                        <div style={{ borderRadius: '12px', border: '2px solid #7F011F', overflow: 'hidden', marginBottom: '1.25rem', height: '180px', background: '#ffffff' }}>
+                          <img src={item.img} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                        </div>
+                      ) : null}
+
                       <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#0a0a0a', fontFamily: 'var(--font-stone)', marginBottom: '0.4rem' }}>{item.title}</h3>
-                      <h4 style={{ fontSize: '0.9rem', fontWeight: 800, color: '#7F011F', marginBottom: '1rem' }}>{item.issuer}</h4>
+                      <h4 style={{ fontSize: '0.95rem', fontWeight: 800, color: '#7F011F', marginBottom: '1rem' }}>{item.issuer}</h4>
                       <p style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0a0a0a', lineHeight: 1.6, marginBottom: '1.25rem' }}>{item.description}</p>
                     </div>
 
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-                      {item.tags.map((t) => (
-                        <span key={t} style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0a0a0a', background: 'rgba(127,1,31,0.08)', border: '1.5px solid #7F011F', padding: '0.2rem 0.6rem', borderRadius: '6px' }}>
-                          {t}
-                        </span>
-                      ))}
+                    <div>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: item.verifyUrl ? '1rem' : 0 }}>
+                        {item.tags.map((t) => (
+                          <span key={t} style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0a0a0a', background: 'rgba(127,1,31,0.08)', border: '1.5px solid #7F011F', padding: '0.2rem 0.6rem', borderRadius: '6px' }}>
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                      {item.verifyUrl ? (
+                        <a href={item.verifyUrl} target="_blank" rel="noreferrer" className="btn-primary" style={{ padding: '0.4rem 1rem', fontSize: '0.75rem', fontWeight: 800, display: 'inline-block' }}>
+                          Verify Certificate →
+                        </a>
+                      ) : null}
                     </div>
                   </div>
                 ))}
@@ -708,12 +730,12 @@ export default function App() {
           </section>
         </ScrollZoomSection>
 
-        {/* ═══ 5. CONTACT (WITH SCROLL ZOOM) ═══ */}
+        {/* ═══ 6. CONTACT (WITH SCROLL ZOOM) ═══ */}
         <ScrollZoomSection id="contact" className="py-12">
           <section className="section" style={{ padding: '4rem 0' }}>
             <div className="container">
               <div className="section-header animate-up">
-                <span className="section-tag">04 / Connect With Me</span>
+                <span className="section-tag">06 / Connect With Me</span>
                 <motion.h2
                   className="section-title"
                   initial={{ WebkitTextStroke: "2.5px #7F011F", color: "rgba(0,0,0,0)", opacity: 0, y: 10 }}
