@@ -115,7 +115,7 @@ function Band({
       const rw = rect.w * W;
       const rh = rect.h * H;
       const pick = imageFit === 'contain' ? Math.min : Math.max;
-      const scale = pick(rw / img.width, rh / img.height);
+      const scale = pick(rw / img.width, rh / img.height) * 1.25;
       const dw = img.width * scale;
       const dh = img.height * scale;
       const dx = rx + (rw - dw) / 2;
@@ -128,8 +128,11 @@ function Band({
       ctx.restore();
     };
 
+    const actualBackImg = backImage || frontImage;
+    const actualBackTex = backImage ? backTex : frontTex;
+
     if (frontImage && frontTex.image) drawFitted(frontTex.image, FRONT_UV_RECT);
-    if (backImage && backTex.image) drawFitted(backTex.image, BACK_UV_RECT);
+    if (actualBackImg && actualBackTex.image) drawFitted(actualBackTex.image, BACK_UV_RECT);
 
     const composite = new THREE.CanvasTexture(canvas);
     composite.colorSpace = THREE.SRGBColorSpace;

@@ -368,11 +368,12 @@ export default function App() {
             {/* Lanyard Column */}
             <div className="hero-lanyard-col">
               <Lanyard
-                position={[0, 0, 20]}
+                position={[0, 0, 18]}
                 gravity={[0, -40, 0]}
-                fov={20}
+                fov={18}
                 transparent={true}
                 frontImage={suriyaPhoto}
+                backImage={suriyaPhoto}
                 imageFit="cover"
                 lanyardImage={lanyardCustom}
                 lanyardWidth={1.2}
