@@ -136,7 +136,18 @@ const educationList = [
 ───────────────────────────────────────────── */
 const achievementsList = [
   {
-    id: 'cert-infosys-1',
+    id: 'cert-saylor-python',
+    title: 'CS105: Introduction to Python',
+    issuer: 'Saylor Academy (saylor.org)',
+    date: 'February 9, 2026',
+    category: 'Official Certification',
+    img: '/assets/images/cert-saylor-python.png',
+    verifyUrl: 'https://www.saylor.org',
+    description: 'Certificate of Achievement awarded to Suriya Raja for successfully completing CS105: Introduction to Python with a distinction grade of 98.42% (36 Hours). Certificate ID: 1897066869SR.',
+    tags: ['Saylor Academy', 'Python', 'Grade: 98.42%', 'ID: 1897066869SR', 'Feb 2026']
+  },
+  {
+    id: 'cert-infosys-ai',
     title: 'Introduction to Artificial Intelligence',
     issuer: 'Infosys Springboard',
     date: 'April 2, 2026',
@@ -145,39 +156,6 @@ const achievementsList = [
     verifyUrl: 'https://verify.onwingspan.com',
     description: 'Course Completion Certificate awarded to Suriya Raja for successfully completing Introduction to Artificial Intelligence issued by Infosys Springboard on April 2, 2026.',
     tags: ['Infosys Springboard', 'Artificial Intelligence', 'Machine Learning', 'April 2026']
-  },
-  {
-    id: 'cert-infosys-2',
-    title: 'Artificial Intelligence Foundations & Applications',
-    issuer: 'Infosys Springboard',
-    date: 'April 2, 2026',
-    category: 'Official Certification',
-    img: '/assets/images/cert-infosys-ai-2.png',
-    verifyUrl: 'https://verify.onwingspan.com',
-    description: 'Professional course completion certificate in Artificial Intelligence fundamentals and model applications issued by Infosys Springboard on April 2, 2026.',
-    tags: ['Infosys Springboard', 'AI Fundamentals', 'Neural Networks', 'April 2026']
-  },
-  {
-    id: 'cert-iot',
-    title: 'IoT Telemetry & Embedded Systems Distinction',
-    issuer: 'Hardware Systems Architecture',
-    date: '2026',
-    category: 'Project Distinction',
-    img: null,
-    verifyUrl: null,
-    description: 'Designed and deployed real-time ESP32 microcontroller telemetry sensor array with automated ventilation feedback loops.',
-    tags: ['ESP32', 'Embedded C++', 'IoT Sensors', '2026']
-  },
-  {
-    id: 'cert-unity',
-    title: 'Unity 3D Game Mechanics & OOP Architecture',
-    issuer: 'Game Systems Showcase',
-    date: '2026',
-    category: 'Project Distinction',
-    img: null,
-    verifyUrl: null,
-    description: 'Architected Object-Oriented C# game loops, state machines, turn-based card logic, and 3D rendering for strategy games.',
-    tags: ['Unity 3D', 'C#', 'Game Loop', '2026']
   }
 ];
 
