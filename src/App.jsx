@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Lanyard from './components/Lanyard/Lanyard';
 import { ScrollZoomSection } from './components/ui/ScrollZoom';
+import { MorphingProjectScroll } from './components/ui/MorphingProjectScroll';
 import suriyaPhoto from './assets/suriya-photo.jpg';
 import lanyardCustom from './assets/lanyard/lanyard-custom.jpg';
 
@@ -521,105 +522,15 @@ export default function App() {
                 </motion.h2>
                 <p className="section-subtitle">Structured technical breakdown demonstrating Problem, Technology, Result, and Learning.</p>
               </div>
-              <div className="projects-filter animate-up">
+              <div className="projects-filter animate-up" style={{ marginBottom: '2rem' }}>
                 {[['all','All Projects'],['web','Web Dev'],['game','Game Dev'],['iot','IoT & Hardware']].map(([f,lbl]) => (
-                  <button key={f} className={`filter-btn${activeFilter===f?' active':''}`} data-filter={f} onClick={() => { setActiveFilter(f); setActiveProjectIndex(0); }}>{lbl}</button>
+                  <button key={f} className={`filter-btn${activeFilter===f?' active':''}`} data-filter={f} onClick={() => setActiveFilter(f)}>{lbl}</button>
                 ))}
               </div>
 
-              {/* SINGLE PROJECT SCROLL CAROUSEL */}
-              <div className="single-project-carousel-wrap animate-up" style={{ marginTop: '2rem' }}>
-                <div className="carousel-controls-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', gap: '1rem', flexWrap: 'wrap' }}>
-                  <div className="carousel-counter" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.85rem', fontWeight: 800, color: '#7F011F', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
-                    Project {String(activeProjectIndex + 1).padStart(2, '0')} / {String(filteredProjects.length).padStart(2, '0')}
-                  </div>
-                  <div className="carousel-nav-buttons" style={{ display: 'flex', gap: '0.75rem' }}>
-                    <button
-                      className="btn-secondary"
-                      style={{ padding: '0.5rem 1.25rem', fontSize: '0.85rem', fontWeight: 800 }}
-                      onClick={() => setActiveProjectIndex((prev) => (prev - 1 + filteredProjects.length) % filteredProjects.length)}
-                    >
-                      ← Previous Project
-                    </button>
-                    <button
-                      className="btn-primary"
-                      style={{ padding: '0.5rem 1.25rem', fontSize: '0.85rem', fontWeight: 800 }}
-                      onClick={() => setActiveProjectIndex((prev) => (prev + 1) % filteredProjects.length)}
-                    >
-                      Next Project →
-                    </button>
-                  </div>
-                </div>
+              {/* MORPHING SCROLL-DRIVEN PROJECT SHOWCASE (NO BUTTONS NEEDED) */}
+              <MorphingProjectScroll projects={filteredProjects} setModalProject={setModalProject} />
 
-                {/* Active Project Card */}
-                {filteredProjects[activeProjectIndex] && (() => {
-                  const p = filteredProjects[activeProjectIndex];
-                  return (
-                    <motion.div
-                      key={p.id}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -20 }}
-                      transition={{ duration: 0.45, ease: 'easeOut' }}
-                      className="glass-card project-card single-project-card"
-                      style={{ background: '#F5EBD0', border: '3.5px solid #7F011F', borderRadius: '20px', padding: '2.5rem', boxShadow: '0 12px 35px rgba(127,1,31,0.2)' }}
-                      onClick={(e) => { if (!e.target.closest('a[target="_blank"]')) setModalProject(p); }}
-                    >
-                      <div className="project-grid-single" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem', alignItems: 'center' }}>
-                        <div className="project-img-wrapper" style={{ height: '340px', borderRadius: '16px', border: '2.5px solid #7F011F', overflow: 'hidden' }}>
-                          <img src={p.img} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                          <span className="project-overlay-badge" style={{ background: '#7F011F', color: '#F5EBD0', fontWeight: 800 }}>{p.badge}</span>
-                        </div>
-                        <div className="project-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
-                          <div>
-                            <h3 className="project-title" style={{ fontSize: '1.8rem', fontWeight: 900, color: '#0a0a0a', marginBottom: '1rem' }}>{p.title}</h3>
-                            <div className="ptrl-summary-list" style={{ marginBottom: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                              {p.ptrl.map(row => (
-                                <div key={row.label} className="ptrl-item" style={{ fontSize: '0.95rem', color: '#0a0a0a', fontWeight: 700 }}>
-                                  <strong style={{ color: '#7F011F', marginRight: '0.4rem' }}>{row.label}</strong>
-                                  {row.text}
-                                </div>
-                              ))}
-                            </div>
-                            <div className="project-tech-tags" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.75rem' }}>
-                              {p.tags.map(t => <span key={t} className="project-tech-tag">{t}</span>)}
-                            </div>
-                          </div>
-                          <div className="project-actions" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                            {p.liveUrl ? (
-                              <a href={p.liveUrl} target="_blank" rel="noreferrer" className="btn-primary" style={{ padding: '0.6rem 1.25rem', fontSize: '0.85rem', fontWeight: 800 }}>
-                                Visit Live App (nogirr.vercel.app) →
-                              </a>
-                            ) : null}
-                            <button className="btn-link" style={{ fontWeight: 800 }}>P-T-R-L Details →</button>
-                            <a href={p.github} target="_blank" rel="noreferrer" className="btn-link" style={{ fontWeight: 800 }}>GitHub →</a>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  );
-                })()}
-
-                {/* Dot Indicators */}
-                <div className="carousel-dots" style={{ display: 'flex', justifyContent: 'center', gap: '0.65rem', marginTop: '1.5rem' }}>
-                  {filteredProjects.map((p, idx) => (
-                    <button
-                      key={p.id}
-                      aria-label={`Go to project ${idx + 1}`}
-                      onClick={() => setActiveProjectIndex(idx)}
-                      style={{
-                        width: idx === activeProjectIndex ? '32px' : '12px',
-                        height: '12px',
-                        borderRadius: '6px',
-                        background: idx === activeProjectIndex ? '#7F011F' : 'rgba(127, 1, 31, 0.25)',
-                        border: '1.5px solid #7F011F',
-                        transition: 'all 0.3s ease',
-                        cursor: 'pointer',
-                      }}
-                    />
-                  ))}
-                </div>
-              </div>
               <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
                 <a href="projects.html" className="btn-secondary">View Projects Archive →</a>
               </div>
