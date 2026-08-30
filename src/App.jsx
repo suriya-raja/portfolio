@@ -667,7 +667,7 @@ export default function App() {
                 <p className="section-subtitle">Technical certifications, project distinctions, and engineering milestones.</p>
               </div>
 
-              <div className="achievements-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+              <div className="achievements-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
                 {achievementsList.map((item) => (
                   <div key={item.id} className="glass-card animate-up" style={{ padding: '2rem', background: '#F5EBD0', border: '3.5px solid #7F011F', borderRadius: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                     <div>
@@ -677,9 +677,9 @@ export default function App() {
                       </div>
 
                       {item.img ? (
-                        <div style={{ borderRadius: '12px', border: '2px solid #7F011F', overflow: 'hidden', marginBottom: '1.25rem', height: '180px', background: '#ffffff' }}>
+                        <a href={item.img} target="_blank" rel="noreferrer" title="Click to view full certificate image" style={{ display: 'block', borderRadius: '12px', border: '2.5px solid #7F011F', overflow: 'hidden', marginBottom: '1.25rem', height: '190px', background: 'rgba(127,1,31,0.04)', cursor: 'pointer' }}>
                           <img src={item.img} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                        </div>
+                        </a>
                       ) : null}
 
                       <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#0a0a0a', fontFamily: 'var(--font-stone)', marginBottom: '0.4rem' }}>{item.title}</h3>
@@ -688,16 +688,16 @@ export default function App() {
                     </div>
 
                     <div>
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: item.verifyUrl ? '1rem' : 0 }}>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: item.img ? '1.25rem' : 0 }}>
                         {item.tags.map((t) => (
                           <span key={t} style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0a0a0a', background: 'rgba(127,1,31,0.08)', border: '1.5px solid #7F011F', padding: '0.2rem 0.6rem', borderRadius: '6px' }}>
                             {t}
                           </span>
                         ))}
                       </div>
-                      {item.verifyUrl ? (
-                        <a href={item.verifyUrl} target="_blank" rel="noreferrer" className="btn-primary" style={{ padding: '0.4rem 1rem', fontSize: '0.75rem', fontWeight: 800, display: 'inline-block' }}>
-                          Verify Certificate →
+                      {item.img ? (
+                        <a href={item.img} target="_blank" rel="noreferrer" className="btn-primary" style={{ padding: '0.5rem 1.25rem', fontSize: '0.85rem', fontWeight: 800, display: 'inline-block', width: '100%', textAlign: 'center' }}>
+                          View Certificate →
                         </a>
                       ) : null}
                     </div>
