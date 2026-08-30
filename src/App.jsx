@@ -366,7 +366,7 @@ export default function App() {
             </div>
 
             {/* Lanyard Column */}
-            <div className="hero-lanyard-col">
+            <div className="hero-lanyard-col" style={{ position: 'relative' }}>
               <Lanyard
                 position={[0, 0, 18]}
                 gravity={[0, -40, 0]}
@@ -378,6 +378,26 @@ export default function App() {
                 lanyardImage={lanyardCustom}
                 lanyardWidth={1.2}
               />
+              <div style={{
+                position: 'absolute',
+                bottom: '1.25rem',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                padding: '0.35rem 0.9rem',
+                borderRadius: '20px',
+                background: '#F5EBD0',
+                border: '2px solid #7F011F',
+                boxShadow: '0 4px 12px rgba(127, 1, 31, 0.2)',
+                zIndex: 10,
+                pointerEvents: 'none'
+              }}>
+                <span style={{ fontSize: '0.75rem', fontWeight: 900, color: '#7F011F', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                  ✦ Drag to Swing ✦
+                </span>
+              </div>
             </div>
           </div>
 
