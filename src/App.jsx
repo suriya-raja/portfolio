@@ -190,7 +190,7 @@ export default function App() {
       <header>
         <nav className={`navbar fade-up${navScrolled ? ' scrolled' : ''}`}>
           <div className="container nav-container">
-            <a href="#" className="logo">SURIYA<span>.</span></a>
+            <a href="#" className="logo">PORTFOLIO<span>.</span></a>
             <ul className={`nav-links${navOpen ? ' active' : ''}`}>
               {['hero', 'about', 'skills', 'projects', 'contact'].map((id, i) => (
                 <li key={id}>
@@ -226,7 +226,7 @@ export default function App() {
           <div className="hero-inner">
             {/* Text Column */}
             <div className="hero-headline-wrap">
-              <span className="hero-greeting fade-up">👋 Hello, I'm Suriya Raja</span>
+              <span className="hero-greeting fade-up">HELLO, I'M SURIYA RAJA</span>
               <h1 className="hero-title">
                 <div className="hero-char-wrap">
                   {'SURIYA'.split('').map((c, i) => <span key={i} className="hero-char" style={{ transform: 'translateY(0)', opacity: 1, color: '#0a0a0a' }}>{c}</span>)}
@@ -242,7 +242,7 @@ export default function App() {
               </p>
               <div className="hero-buttons fade-up">
                 <a href="#projects" className="btn-primary">View My Projects →</a>
-                <a href="#contact" className="btn-secondary">Download Resume 📄</a>
+                <a href="#contact" className="btn-secondary">Download Resume →</a>
               </div>
             </div>
 
@@ -309,170 +309,171 @@ export default function App() {
           </section>
         </ScrollZoomSection>
 
-        {/* ═══ 3. SKILLS ═══ */}
-        <section id="skills" className="section">
-          <div className="container">
-            <div className="section-header animate-up">
-              <span className="section-tag">02 / Technical Stack</span>
-              <h2 className="section-title">Skills & Technologies</h2>
-              <p className="section-subtitle">Core technical proficiencies and development tools across AI, software, and systems.</p>
-            </div>
-            <div className="skills-grid">
-              {[
-                {
-                  icon: '💻',
-                  title: 'Programming',
-                  skills: [
-                    { name: 'Python', icon: '🐍', tier: 'Advanced' },
-                    { name: 'C++', icon: '⚡', tier: 'Proficient' },
-                    { name: 'C', icon: '⚙️', tier: 'Proficient' },
-                    { name: 'SQL', icon: '🗄️', tier: 'Proficient' },
-                  ]
-                },
-                {
-                  icon: '🌐',
-                  title: 'Web Development',
-                  skills: [
-                    { name: 'React', icon: '⚛️', tier: 'Advanced' },
-                    { name: 'HTML5', icon: '🌐', tier: 'Advanced' },
-                    { name: 'CSS3', icon: '🎨', tier: 'Advanced' },
-                    { name: 'JavaScript', icon: '⚡', tier: 'Advanced' },
-                  ]
-                },
-                {
-                  icon: '🗄️',
-                  title: 'Database & Cloud',
-                  skills: [
-                    { name: 'MySQL', icon: '🐬', tier: 'Proficient' },
-                    { name: 'MongoDB', icon: '🍃', tier: 'Intermediate' },
-                  ]
-                },
-                {
-                  icon: '🛠️',
-                  title: 'Tools & Ecosystem',
-                  skills: [
-                    { name: 'VS Code', icon: '📝', tier: 'Advanced' },
-                    { name: 'Git & GitHub', icon: '🐙', tier: 'Advanced' },
-                    { name: 'Linux', icon: '🐧', tier: 'Proficient' },
-                    { name: 'Unity Engine', icon: '🎮', tier: 'Intermediate' },
-                  ]
-                },
-              ].map(({ icon, title, skills }) => (
-                <div key={title} className="skill-category-card animate-up">
-                  <div className="skill-category-header">
-                    <div className="skill-category-header-left">
-                      <div className="skill-icon-wrap">{icon}</div>
-                      <h3 className="skill-category-title">{title}</h3>
+        {/* ═══ 3. SKILLS (WITH SCROLL ZOOM) ═══ */}
+        <ScrollZoomSection id="skills" className="py-12">
+          <section className="section" style={{ padding: '4rem 0' }}>
+            <div className="container">
+              <div className="section-header animate-up">
+                <span className="section-tag">02 / Technical Stack</span>
+                <h2 className="section-title">Skills & Technologies</h2>
+                <p className="section-subtitle">Core technical proficiencies and development tools across AI, software, and systems.</p>
+              </div>
+              <div className="skills-grid">
+                {[
+                  {
+                    code: 'DEV',
+                    title: 'Programming',
+                    skills: [
+                      { name: 'Python', tier: 'Advanced' },
+                      { name: 'C++', tier: 'Proficient' },
+                      { name: 'C', tier: 'Proficient' },
+                      { name: 'SQL', tier: 'Proficient' },
+                    ]
+                  },
+                  {
+                    code: 'WEB',
+                    title: 'Web Development',
+                    skills: [
+                      { name: 'React', tier: 'Advanced' },
+                      { name: 'HTML5', tier: 'Advanced' },
+                      { name: 'CSS3', tier: 'Advanced' },
+                      { name: 'JavaScript', tier: 'Advanced' },
+                    ]
+                  },
+                  {
+                    code: 'DATA',
+                    title: 'Database & Cloud',
+                    skills: [
+                      { name: 'MySQL', tier: 'Proficient' },
+                      { name: 'MongoDB', tier: 'Intermediate' },
+                    ]
+                  },
+                  {
+                    code: 'TOOL',
+                    title: 'Tools & Ecosystem',
+                    skills: [
+                      { name: 'VS Code', tier: 'Advanced' },
+                      { name: 'Git & GitHub', tier: 'Advanced' },
+                      { name: 'Linux', tier: 'Proficient' },
+                      { name: 'Unity Engine', tier: 'Intermediate' },
+                    ]
+                  },
+                ].map(({ code, title, skills }) => (
+                  <div key={title} className="skill-category-card animate-up">
+                    <div className="skill-category-header">
+                      <div className="skill-category-header-left">
+                        <div className="skill-icon-wrap">{code}</div>
+                        <h3 className="skill-category-title">{title}</h3>
+                      </div>
+                      <span className="skill-category-count">{skills.length} Skills</span>
                     </div>
-                    <span className="skill-category-count">{skills.length} Skills</span>
+                    <div className="skill-badges-grid">
+                      {skills.map(s => (
+                        <div key={s.name} className="skill-badge-item">
+                          <div className="skill-badge-info">
+                            <span className="skill-badge-name">{s.name}</span>
+                            <span className="skill-badge-tier">{s.tier}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div className="skill-badges-grid">
-                    {skills.map(s => (
-                      <div key={s.name} className="skill-badge-item">
-                        <span className="skill-badge-icon">{s.icon}</span>
-                        <div className="skill-badge-info">
-                          <span className="skill-badge-name">{s.name}</span>
-                          <span className="skill-badge-tier">{s.tier}</span>
+                ))}
+              </div>
+            </div>
+          </section>
+        </ScrollZoomSection>
+
+        {/* ═══ 4. PROJECTS (WITH SCROLL ZOOM) ═══ */}
+        <ScrollZoomSection id="projects" className="py-12">
+          <section className="section" style={{ padding: '4rem 0' }}>
+            <div className="container">
+              <div className="section-header animate-up">
+                <span className="section-tag">03 / Core Showcase</span>
+                <h2 className="section-title">Projects (P → T → R → L)</h2>
+                <p className="section-subtitle">Structured technical breakdown demonstrating Problem, Technology, Result, and Learning.</p>
+              </div>
+              <div className="projects-filter animate-up">
+                {[['all','All Projects'],['iot','IoT & Hardware'],['web','Web Dev'],['game','Game Dev']].map(([f,lbl]) => (
+                  <button key={f} className={`filter-btn${activeFilter===f?' active':''}`} data-filter={f} onClick={() => setActiveFilter(f)}>{lbl}</button>
+                ))}
+              </div>
+              <div className="projects-grid">
+                {filteredProjects.map(p => (
+                  <div key={p.id} className="glass-card project-card animate-up" onClick={(e) => { if (!e.target.closest('a[target="_blank"]')) setModalProject(p); }}>
+                    <div className="project-img-wrapper">
+                      <img src={p.img} alt={p.title} />
+                      <span className="project-overlay-badge">{p.badge}</span>
+                    </div>
+                    <div className="project-content">
+                      <div>
+                        <h3 className="project-title">{p.title}</h3>
+                        <div className="ptrl-summary-list">
+                          {p.ptrl.map(row => <div key={row.label} className="ptrl-item"><strong>{row.label}</strong>{row.text}</div>)}
+                        </div>
+                        <div className="project-tech-tags">
+                          {p.tags.map(t => <span key={t} className="project-tech-tag">{t}</span>)}
                         </div>
                       </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ═══ 4. PROJECTS ═══ */}
-        <section id="projects" className="section">
-          <div className="container">
-            <div className="section-header animate-up">
-              <span className="section-tag">03 / Core Showcase</span>
-              <h2 className="section-title">Projects (P → T → R → L)</h2>
-              <p className="section-subtitle">Structured technical breakdown demonstrating Problem, Technology, Result, and Learning.</p>
-            </div>
-            <div className="projects-filter animate-up">
-              {[['all','All Projects'],['iot','IoT & Hardware'],['web','Web Dev'],['game','Game Dev']].map(([f,lbl]) => (
-                <button key={f} className={`filter-btn${activeFilter===f?' active':''}`} data-filter={f} onClick={() => setActiveFilter(f)}>{lbl}</button>
-              ))}
-            </div>
-            <div className="projects-grid">
-              {filteredProjects.map(p => (
-                <div key={p.id} className="glass-card project-card animate-up" onClick={(e) => { if (!e.target.closest('a[target="_blank"]')) setModalProject(p); }}>
-                  <div className="project-img-wrapper">
-                    <img src={p.img} alt={p.title} />
-                    <span className="project-overlay-badge">{p.badge}</span>
-                  </div>
-                  <div className="project-content">
-                    <div>
-                      <h3 className="project-title">{p.title}</h3>
-                      <div className="ptrl-summary-list">
-                        {p.ptrl.map(row => <div key={row.label} className="ptrl-item"><strong>{row.label}</strong>{row.text}</div>)}
-                      </div>
-                      <div className="project-tech-tags">
-                        {p.tags.map(t => <span key={t} className="project-tech-tag">{t}</span>)}
+                      <div className="project-actions">
+                        <button className="btn-link">P-T-R-L Details →</button>
+                        <a href={p.github} target="_blank" rel="noreferrer" className="btn-link">GitHub →</a>
                       </div>
                     </div>
-                    <div className="project-actions">
-                      <button className="btn-link">P-T-R-L Details 🔍</button>
-                      <a href={p.github} target="_blank" rel="noreferrer" className="btn-link">GitHub 🐙</a>
-                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-            <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
-              <a href="projects.html" className="btn-secondary">View Projects Archive →</a>
-            </div>
-          </div>
-        </section>
-
-        {/* ═══ 5. CONTACT ═══ */}
-        <section id="contact" className="section">
-          <div className="container">
-            <div className="section-header animate-up">
-              <span className="section-tag">04 / Connect With Me</span>
-              <h2 className="section-title">Get In Touch</h2>
-              <p className="section-subtitle">Let's connect for machine learning opportunities, tech discussions, or project collaborations.</p>
-            </div>
-            <div className="contact-grid">
-              <div className="contact-info animate-up">
-                <h3>Connect With Me</h3>
-                <p>I am actively seeking machine learning and software engineering opportunities. Feel free to reach out via GitHub, LinkedIn, or Email!</p>
-                <div className="contact-list">
-                  <a href="https://github.com/suriya-raja" target="_blank" rel="noreferrer" className="contact-item">
-                    <div className="contact-item-icon">🐙</div>
-                    <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>GitHub</strong><span style={{ color: '#0a0a0a' }}>github.com/suriya-raja</span></div>
-                  </a>
-                  <a href="https://www.linkedin.com/in/suriya-raja-8bb15737a" target="_blank" rel="noreferrer" className="contact-item">
-                    <div className="contact-item-icon">💼</div>
-                    <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>LinkedIn</strong><span style={{ color: '#0a0a0a' }}>linkedin.com/in/suriya-raja-8bb15737a</span></div>
-                  </a>
-                  <a href="mailto:suriyaraja565@gmail.com" className="contact-item">
-                    <div className="contact-item-icon">✉</div>
-                    <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>Email</strong><span style={{ color: '#0a0a0a' }}>suriyaraja565@gmail.com</span></div>
-                  </a>
-                  <div className="contact-item" style={{ cursor:'default' }}>
-                    <div className="contact-item-icon">📄</div>
-                    <div style={{ display:'flex',justifyContent:'space-between',width:'100%',alignItems:'center' }}>
-                      <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>Resume PDF</strong><span style={{ color: '#0a0a0a' }}>Suriya_Raja_Resume.pdf</span></div>
-                      <a href="#" download="Suriya_Raja_Resume.pdf" className="btn-primary" style={{ padding:'0.4rem 1rem',fontSize:'0.75rem' }}>Download</a>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
-              <form className="glass-card contact-form animate-up" onSubmit={handleSubmit}>
-                <div className="form-row">
-                  <div className="form-group"><input type="text" name="name" className="form-control" placeholder="Your Name" required /></div>
-                  <div className="form-group"><input type="email" name="email" className="form-control" placeholder="Your Email" required /></div>
-                </div>
-                <div className="form-group"><input type="text" name="subject" className="form-control" placeholder="Subject" required /></div>
-                <div className="form-group"><textarea name="message" className="form-control" placeholder="Your Message" required></textarea></div>
-                <button type="submit" className="btn-primary">Send Message →</button>
-              </form>
+              <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
+                <a href="projects.html" className="btn-secondary">View Projects Archive →</a>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </ScrollZoomSection>
+
+        {/* ═══ 5. CONTACT (WITH SCROLL ZOOM) ═══ */}
+        <ScrollZoomSection id="contact" className="py-12">
+          <section className="section" style={{ padding: '4rem 0' }}>
+            <div className="container">
+              <div className="section-header animate-up">
+                <span className="section-tag">04 / Connect With Me</span>
+                <h2 className="section-title">Get In Touch</h2>
+                <p className="section-subtitle">Let's connect for machine learning opportunities, tech discussions, or project collaborations.</p>
+              </div>
+              <div className="contact-grid">
+                <div className="contact-info animate-up">
+                  <h3>Connect With Me</h3>
+                  <p>I am actively seeking machine learning and software engineering opportunities. Feel free to reach out via GitHub, LinkedIn, or Email!</p>
+                  <div className="contact-list">
+                    <a href="https://github.com/suriya-raja" target="_blank" rel="noreferrer" className="contact-item">
+                      <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>GITHUB</strong><span style={{ color: '#0a0a0a' }}>github.com/suriya-raja</span></div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/suriya-raja-8bb15737a" target="_blank" rel="noreferrer" className="contact-item">
+                      <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>LINKEDIN</strong><span style={{ color: '#0a0a0a' }}>linkedin.com/in/suriya-raja-8bb15737a</span></div>
+                    </a>
+                    <a href="mailto:suriyaraja565@gmail.com" className="contact-item">
+                      <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>EMAIL</strong><span style={{ color: '#0a0a0a' }}>suriyaraja565@gmail.com</span></div>
+                    </a>
+                    <div className="contact-item" style={{ cursor:'default' }}>
+                      <div style={{ display:'flex',justifyContent:'space-between',width:'100%',alignItems:'center' }}>
+                        <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>RESUME PDF</strong><span style={{ color: '#0a0a0a' }}>Suriya_Raja_Resume.pdf</span></div>
+                        <a href="#" download="Suriya_Raja_Resume.pdf" className="btn-primary" style={{ padding:'0.4rem 1rem',fontSize:'0.75rem' }}>Download</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <form className="glass-card contact-form animate-up" onSubmit={handleSubmit}>
+                  <div className="form-row">
+                    <div className="form-group"><input type="text" name="name" className="form-control" placeholder="Your Name" required /></div>
+                    <div className="form-group"><input type="email" name="email" className="form-control" placeholder="Your Email" required /></div>
+                  </div>
+                  <div className="form-group"><input type="text" name="subject" className="form-control" placeholder="Subject" required /></div>
+                  <div className="form-group"><textarea name="message" className="form-control" placeholder="Your Message" required></textarea></div>
+                  <button type="submit" className="btn-primary">Send Message →</button>
+                </form>
+              </div>
+            </div>
+          </section>
+        </ScrollZoomSection>
       </main>
 
       {/* FOOTER */}

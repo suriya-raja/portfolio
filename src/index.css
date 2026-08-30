@@ -120,18 +120,19 @@ body {
 
 .section-tag {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.3em;
-  color: var(--accent-cyan);
+  color: #7F011F;
   margin-bottom: 0.75rem;
   display: block;
+  font-weight: 700;
 }
 
 .section-title {
   font-family: var(--font-stone);
-  font-size: clamp(2rem, 4.5vw, 3.25rem);
-  font-weight: 700;
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-weight: 900;
   color: #0a0a0a;
   letter-spacing: 0.05em;
   line-height: 1.2;
@@ -139,24 +140,24 @@ body {
 
 .section-subtitle {
   font-family: var(--font-sans);
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  max-width: 640px;
+  font-size: 1rem;
+  color: #7F011F;
+  max-width: 680px;
   margin: 0.75rem auto 0;
-  font-weight: 300;
+  font-weight: 700;
 }
 
 /* --- Glassmorphism Card --- */
 .glass-card {
   background: #F5EBD0;
-  border: 2px solid #7F011F;
-  border-radius: 16px;
+  border: 3.5px solid #7F011F;
+  border-radius: 18px;
   padding: 2rem;
   transition: all var(--transition-smooth);
   position: relative;
   overflow: hidden;
   color: #0a0a0a;
-  box-shadow: 0 6px 20px rgba(127, 1, 31, 0.12);
+  box-shadow: 0 8px 24px rgba(127, 1, 31, 0.15);
 }
 
 .glass-card::before {
@@ -165,14 +166,14 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
+  height: 3px;
   background: #7F011F;
 }
 
 .glass-card:hover {
   border-color: #7F011F;
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(127, 1, 31, 0.22);
+  box-shadow: 0 16px 36px rgba(127, 1, 31, 0.25);
 }
 
 /* --- NAVBAR --- */
@@ -347,19 +348,21 @@ body {
   font-size: clamp(0.85rem, 1.5vw, 1.1rem);
   text-transform: uppercase;
   letter-spacing: 0.35em;
-  color: var(--accent-cyan);
+  color: #7F011F;
   margin-bottom: 0.75rem;
   display: block;
+  font-weight: 700;
+  text-align: left;
 }
 
 .hero-title {
   font-family: var(--font-stone);
   font-size: clamp(3.2rem, 9.5vw, 9rem);
-  font-weight: 700;
+  font-weight: 900;
   line-height: 0.92;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  mix-blend-mode: exclusion;
+  text-align: left;
 }
 
 .hero-char-wrap {
@@ -383,20 +386,23 @@ body {
   font-family: var(--font-sans);
   font-size: clamp(0.95rem, 1.8vw, 1.25rem);
   color: #7F011F;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.08em;
-  margin: 1.25rem auto 0;
+  margin: 1.25rem 0 0 0;
   max-width: 780px;
+  text-align: left;
 }
 
 .hero-description {
   font-family: var(--font-sans);
-  font-size: clamp(0.875rem, 1.4vw, 1.05rem);
-  color: rgba(10, 10, 10, 0.78);
+  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+  color: #0a0a0a;
   max-width: 680px;
-  margin: 0.75rem auto 1.75rem;
-  font-weight: 400;
-  line-height: 1.7;
+  margin: 1rem 0 2rem 0;
+  padding: 0;
+  font-weight: 700;
+  line-height: 1.75;
+  text-align: left;
 }
 
 .hero-buttons {
@@ -483,24 +489,24 @@ body {
 
 .about-text-box {
   background: #F5EBD0;
-  border: 2px solid #7F011F;
-  border-radius: 16px;
+  border: 3.5px solid #7F011F;
+  border-radius: 18px;
   padding: 2.5rem;
   color: #0a0a0a;
-  box-shadow: 0 6px 20px rgba(127, 1, 31, 0.12);
+  box-shadow: 0 8px 24px rgba(127, 1, 31, 0.15);
 }
 
 .about-text-box p {
   color: #0a0a0a;
   font-size: 1.05rem;
   margin-bottom: 1.25rem;
-  font-weight: 400;
-  line-height: 1.8;
+  font-weight: 700;
+  line-height: 1.85;
 }
 
 .about-text-box p strong {
   color: #7F011F;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .about-details-list {
@@ -542,9 +548,9 @@ body {
   padding: 1.75rem;
   text-align: center;
   background: #F5EBD0;
-  border: 2px solid #7F011F;
-  border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(127, 1, 31, 0.12);
+  border: 3.5px solid #7F011F;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(127, 1, 31, 0.15);
 }
 
 .stat-number {
@@ -573,7 +579,7 @@ body {
 
 .skill-category-card {
   background: #F5EBD0;
-  border: 2px solid #7F011F;
+  border: 3.5px solid #7F011F;
   border-radius: 18px;
   padding: 2rem;
   height: 100%;
@@ -581,12 +587,12 @@ body {
   flex-direction: column;
   justify-content: space-between;
   transition: all var(--transition-smooth);
-  box-shadow: 0 6px 20px rgba(127, 1, 31, 0.12);
+  box-shadow: 0 8px 24px rgba(127, 1, 31, 0.15);
 }
 
 .skill-category-card:hover {
   border-color: #7F011F;
-  box-shadow: 0 16px 36px rgba(127, 1, 31, 0.22);
+  box-shadow: 0 18px 40px rgba(127, 1, 31, 0.25);
 }
 
 .skill-category-header {
@@ -609,11 +615,13 @@ body {
   height: 44px;
   border-radius: 12px;
   background: rgba(127, 1, 31, 0.12);
-  border: 1.5px solid #7F011F;
+  border: 2px solid #7F011F;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.35rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #7F011F;
 }
 
 .skill-category-title {
@@ -630,9 +638,9 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: #7F011F;
-  font-weight: 700;
+  font-weight: 800;
   background: rgba(127, 1, 31, 0.12);
-  border: 1.5px solid #7F011F;
+  border: 2px solid #7F011F;
   padding: 0.25rem 0.6rem;
   border-radius: 20px;
 }
@@ -646,11 +654,11 @@ body {
 .skill-badge-item {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   padding: 0.75rem 0.9rem;
   border-radius: 12px;
   background: rgba(127, 1, 31, 0.06);
-  border: 1.5px solid #7F011F;
+  border: 2px solid #7F011F;
   transition: all var(--transition-fast);
   cursor: default;
 }
@@ -1470,15 +1478,19 @@ textarea.form-control {
 }
 
 /* ─── HERO SPLIT LAYOUT (Lanyard Integration) ─── */
+/* ─── HERO SPLIT LAYOUT (Lanyard Integration & Container Alignment) ─── */
 .hero-inner {
   position: relative;
   z-index: 30;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex: 1;
   gap: 2rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
   padding: 2rem 1.5rem 0;
 }
 
@@ -1486,21 +1498,21 @@ textarea.form-control {
   .hero-inner {
     flex-direction: row;
     align-items: center;
-    padding: 2rem 4rem 0;
-    gap: 0;
+    padding: 2rem 3rem 0;
+    gap: 2rem;
   }
   .hero-headline-wrap {
     text-align: left;
     flex: 1;
     margin: 0;
-    padding: 2rem 2rem 2rem 0;
+    padding: 2rem 0;
   }
   .hero-buttons {
     justify-content: flex-start;
   }
 }
 
-/* ─── LANYARD BOX (sand background, burgundy border, smaller size) ─── */
+/* ─── LANYARD BOX (sand background, thick burgundy border, left-shifted) ─── */
 .hero-lanyard-col {
   position: relative;
   z-index: 30;
@@ -1512,10 +1524,10 @@ textarea.form-control {
   /* Sand-colored box */
   background: linear-gradient(145deg, #F5EBD0 0%, #ede0c4 100%);
   border-radius: 20px;
-  border: 2px solid var(--burgundy);
+  border: 3.5px solid var(--burgundy);
   box-shadow:
-    0 0 0 1px rgba(127, 1, 31, 0.15),
-    0 8px 30px rgba(127, 1, 31, 0.2),
+    0 0 0 1px rgba(127, 1, 31, 0.2),
+    0 10px 32px rgba(127, 1, 31, 0.25),
     inset 0 1px 0 rgba(255,255,255,0.6);
 
   overflow: hidden;
@@ -1527,8 +1539,8 @@ textarea.form-control {
   position: absolute;
   top: 0; left: 0;
   width: 45px; height: 45px;
-  border-top: 3px solid var(--burgundy);
-  border-left: 3px solid var(--burgundy);
+  border-top: 4px solid var(--burgundy);
+  border-left: 4px solid var(--burgundy);
   border-radius: 18px 0 0 0;
   z-index: 2;
   pointer-events: none;
@@ -1540,8 +1552,8 @@ textarea.form-control {
   position: absolute;
   bottom: 0; right: 0;
   width: 45px; height: 45px;
-  border-bottom: 3px solid var(--burgundy);
-  border-right: 3px solid var(--burgundy);
+  border-bottom: 4px solid var(--burgundy);
+  border-right: 4px solid var(--burgundy);
   border-radius: 0 0 18px 0;
   z-index: 2;
   pointer-events: none;
@@ -1550,10 +1562,11 @@ textarea.form-control {
 @media (min-width: 900px) {
   .hero-lanyard-col {
     width: 32%;
-    max-width: 350px;
+    max-width: 340px;
     height: 56vh;
     min-height: 380px;
     max-height: 440px;
+    margin-right: 0;
   }
 }
 
