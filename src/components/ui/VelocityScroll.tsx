@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useMotionValue, useScroll, useVelocity, useSpring, useTransform, useAnimationFrame } from "framer-motion";
+import { motion, useMotionValue, useScroll, useVelocity, useSpring, useTransform, useAnimationFrame, wrap } from "framer-motion";
 
 interface VelocityScrollProps {
     texts?: [string, string];
@@ -30,7 +30,10 @@ const ParallaxText = ({
     const scrollVelocity = useVelocity(scrollY);
     const smoothVelocity = useSpring(scrollVelocity, { damping: 50, stiffness: 400 });
     const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], { clamp: false });
-    const x = useTransform(baseX, (v) => `${((v % 100) + 100) % 100 - 50}%`);
+    
+    // We render 8 identical copies. 1 copy = 12.5% of total width.
+    // Seamless wrapping between -12.5% and 0% guarantees zero blank space or jumping.
+    const x = useTransform(baseX, (v) => `${wrap(-12.5, 0, v)}%`);
     const directionFactor = useRef<number>(1);
 
     useAnimationFrame((_, delta) => {
@@ -63,8 +66,10 @@ const ParallaxText = ({
                     WebkitTextStroke: `1px ${textColor}`,
                 }}
             >
-                {[0, 1, 2, 3, 4].map((k) => (
-                    <span key={k} style={{ display: "block", marginRight: "2.5rem" }}>{children}&nbsp;</span>
+                {[0, 1, 2, 3, 4, 5, 6, 7].map((k) => (
+                    <span key={k} style={{ display: "inline-flex", alignItems: "center", paddingRight: "2.5rem" }}>
+                        {children}
+                    </span>
                 ))}
             </motion.div>
         </div>
@@ -83,7 +88,7 @@ export const VelocityScroll = ({
     return (
         <div style={{
             width: "100%",
-            padding: compact ? "2rem 0" : "3.5rem 0",
+            padding: compact ? "1.8rem 0" : "3.5rem 0",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -92,6 +97,8 @@ export const VelocityScroll = ({
             overflow: "hidden",
             borderTop: "1.5px solid #7F011F",
             borderBottom: "1.5px solid #7F011F",
+            position: "relative",
+            zIndex: 10,
         }}>
             <ParallaxText baseVelocity={-baseVelocity} textColor={textColor} compact={compact}>{texts[0]}</ParallaxText>
             <ParallaxText baseVelocity={baseVelocity} textColor={row2Color} compact={compact}>{texts[1]}</ParallaxText>
