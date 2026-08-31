@@ -1518,17 +1518,17 @@ textarea.form-control {
   position: relative;
   z-index: 30;
   width: 100%;
-  max-width: 320px;
-  height: 380px;
+  max-width: 400px;
+  height: 460px;
   flex-shrink: 0;
 
   /* Sand-colored box */
   background: linear-gradient(145deg, #F5EBD0 0%, #ede0c4 100%);
-  border-radius: 20px;
+  border-radius: 24px;
   border: 3.5px solid var(--burgundy);
   box-shadow:
     0 0 0 1px rgba(127, 1, 31, 0.2),
-    0 10px 32px rgba(127, 1, 31, 0.25),
+    0 12px 36px rgba(127, 1, 31, 0.25),
     inset 0 1px 0 rgba(255,255,255,0.6);
 
   overflow: hidden;
@@ -1539,10 +1539,10 @@ textarea.form-control {
   content: '';
   position: absolute;
   top: 0; left: 0;
-  width: 45px; height: 45px;
-  border-top: 4px solid var(--burgundy);
-  border-left: 4px solid var(--burgundy);
-  border-radius: 18px 0 0 0;
+  width: 50px; height: 50px;
+  border-top: 4.5px solid var(--burgundy);
+  border-left: 4.5px solid var(--burgundy);
+  border-radius: 20px 0 0 0;
   z-index: 2;
   pointer-events: none;
 }
@@ -1552,21 +1552,21 @@ textarea.form-control {
   content: '';
   position: absolute;
   bottom: 0; right: 0;
-  width: 45px; height: 45px;
-  border-bottom: 4px solid var(--burgundy);
-  border-right: 4px solid var(--burgundy);
-  border-radius: 0 0 18px 0;
+  width: 50px; height: 50px;
+  border-bottom: 4.5px solid var(--burgundy);
+  border-right: 4.5px solid var(--burgundy);
+  border-radius: 0 0 20px 0;
   z-index: 2;
   pointer-events: none;
 }
 
 @media (min-width: 900px) {
   .hero-lanyard-col {
-    width: 32%;
-    max-width: 340px;
-    height: 56vh;
-    min-height: 380px;
-    max-height: 440px;
+    width: 40%;
+    max-width: 440px;
+    height: 64vh;
+    min-height: 480px;
+    max-height: 560px;
     margin-right: 0;
   }
 }

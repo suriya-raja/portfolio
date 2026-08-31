@@ -382,7 +382,7 @@ export default function App() {
                 Drag to swing ↗
               </span>
               <Lanyard
-                position={[0, 0, 18]}
+                position={[0, 0, 16]}
                 gravity={[0, -40, 0]}
                 fov={18}
                 transparent={true}
@@ -390,7 +390,7 @@ export default function App() {
                 backImage={suriyaPhoto}
                 imageFit="cover"
                 lanyardImage={lanyardCustom}
-                lanyardWidth={1.2}
+                lanyardWidth={1.8}
               />
             </div>
           </div>
