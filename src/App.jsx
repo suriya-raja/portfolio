@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Lanyard from './components/Lanyard/Lanyard';
 import { ScrollZoomSection } from './components/ui/ScrollZoom';
+import { TypeWriter } from './components/ui/TypeWriter';
+import { VelocityScroll } from './components/ui/VelocityScroll';
 import suriyaPhoto from './assets/suriya-photo.jpg';
 import lanyardCustom from './assets/lanyard/lanyard-custom.jpg';
 
@@ -408,6 +410,16 @@ export default function App() {
           </div>
         </section>
 
+        {/* ═══ 1.5 VELOCITY SCROLL MARQUEE ═══ */}
+        <VelocityScroll
+          texts={["Suriya Raja", "BTech CSE · AI & ML"]}
+          baseVelocity={4}
+          backgroundColor="#1a0008"
+          textColor="#7F011F"
+          textColor2="#F5EBD0"
+          compact={true}
+        />
+
         {/* ═══ 2. ABOUT (WITH SCROLL ZOOM TRANSITION FROM LANDING) ═══ */}
         <ScrollZoomSection id="about" className="py-12">
           <section className="section" style={{ padding: '4rem 0' }}>
@@ -462,20 +474,20 @@ export default function App() {
             <div className="container">
               <div className="section-header animate-up">
                 <span className="section-tag">02 / Technical Stack</span>
-                <motion.h2
+                <TypeWriter
+                  as="h2"
                   className="section-title"
-                  initial={{ WebkitTextStroke: "2.5px #7F011F", color: "rgba(0,0,0,0)", opacity: 0, y: 10 }}
-                  whileInView={{
-                    WebkitTextStroke: ["2.5px #7F011F", "2.5px #7F011F", "1.5px #7F011F"],
-                    color: ["rgba(0,0,0,0)", "rgba(0,0,0,0)", "#0a0a0a"],
-                    opacity: [0, 1, 1],
-                    y: [10, 0, 0]
-                  }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  transition={{ duration: 1.5, times: [0, 0.45, 1], ease: "easeInOut" }}
-                >
-                  Skills & Technologies
-                </motion.h2>
+                  words={[
+                    "Skills & Technologies",
+                    "Technical Stack",
+                    "Core Proficiencies",
+                    "Tools & Frameworks"
+                  ]}
+                  typingSpeed={75}
+                  deletingSpeed={35}
+                  pauseDelay={2200}
+                  cursorColor="#7F011F"
+                />
                 <p className="section-subtitle">Core technical proficiencies and development tools across AI, software, and systems.</p>
               </div>
               <div className="skills-grid">
@@ -544,26 +556,36 @@ export default function App() {
           </section>
         </ScrollZoomSection>
 
+        {/* ═══ 3.5 SKILLS→PROJECTS VELOCITY SCROLL ═══ */}
+        <VelocityScroll
+          texts={["Programming · Web Development", "Database Cloud · Tools & Ecosystem"]}
+          baseVelocity={3.8}
+          backgroundColor="#1a0008"
+          textColor="#7F011F"
+          textColor2="#F5EBD0"
+          compact={true}
+        />
+
         {/* ═══ 4. PROJECTS (WITH SCROLL ZOOM) ═══ */}
         <ScrollZoomSection id="projects" className="py-12">
           <section className="section" style={{ padding: '4rem 0' }}>
             <div className="container">
               <div className="section-header animate-up">
                 <span className="section-tag">03 / Core Showcase</span>
-                <motion.h2
+                <TypeWriter
+                  as="h2"
                   className="section-title"
-                  initial={{ WebkitTextStroke: "2.5px #7F011F", color: "rgba(0,0,0,0)", opacity: 0, y: 10 }}
-                  whileInView={{
-                    WebkitTextStroke: ["2.5px #7F011F", "2.5px #7F011F", "1.5px #7F011F"],
-                    color: ["rgba(0,0,0,0)", "rgba(0,0,0,0)", "#0a0a0a"],
-                    opacity: [0, 1, 1],
-                    y: [10, 0, 0]
-                  }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  transition={{ duration: 1.5, times: [0, 0.45, 1], ease: "easeInOut" }}
-                >
-                  Projects (P → T → R → L)
-                </motion.h2>
+                  words={[
+                    "Projects (P → T → R → L)",
+                    "Problem → Tech → Result → Learn",
+                    "Featured Applications",
+                    "Selected Works & Builds"
+                  ]}
+                  typingSpeed={75}
+                  deletingSpeed={35}
+                  pauseDelay={2200}
+                  cursorColor="#7F011F"
+                />
                 <p className="section-subtitle">Structured technical breakdown demonstrating Problem, Technology, Result, and Learning.</p>
               </div>
               <div className="projects-filter animate-up">
@@ -605,6 +627,16 @@ export default function App() {
             </div>
           </section>
         </ScrollZoomSection>
+
+        {/* ═══ 4.5 PROJECT→EDUCATION VELOCITY SCROLL ═══ */}
+        <VelocityScroll
+          texts={["NOGIRR · Tikki Topple · C++ · Python", "DBMS · Machine Learning · React · Unity"]}
+          baseVelocity={3.5}
+          backgroundColor="#1a0008"
+          textColor="#7F011F"
+          textColor2="#F5EBD0"
+          compact={true}
+        />
 
         {/* ═══ 4.5 EDUCATION (WITH SCROLL ZOOM) ═══ */}
         <ScrollZoomSection id="education" className="py-12">
