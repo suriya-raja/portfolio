@@ -228,6 +228,7 @@ function showToast(message) {
 export default function App() {
   const [activeFilter, setActiveFilter] = useState('all');
   const [modalProject, setModalProject] = useState(null);
+  const [showResumeModal, setShowResumeModal] = useState(false);
   const [navScrolled, setNavScrolled] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -363,7 +364,7 @@ export default function App() {
               </p>
               <div className="hero-buttons fade-up">
                 <a href="#projects" className="btn-primary">View My Projects →</a>
-                <a href="#contact" className="btn-secondary">Download Resume →</a>
+                <a href="/assets/images/Suriya_Raja_Resume.pdf" download="Suriya_Raja_Resume.pdf" className="btn-secondary">Download Resume →</a>
               </div>
             </div>
 
@@ -791,10 +792,75 @@ export default function App() {
                     <a href="mailto:suriyaraja565@gmail.com" className="contact-item">
                       <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>EMAIL</strong><span style={{ color: '#0a0a0a' }}>suriyaraja565@gmail.com</span></div>
                     </a>
-                    <div className="contact-item" style={{ cursor:'default' }}>
-                      <div style={{ display:'flex',justifyContent:'space-between',width:'100%',alignItems:'center' }}>
-                        <div><strong style={{ display:'block',fontSize:'0.85rem',color:'#7F011F' }}>RESUME PDF</strong><span style={{ color: '#0a0a0a' }}>Suriya_Raja_Resume.pdf</span></div>
-                        <a href="#" download="Suriya_Raja_Resume.pdf" className="btn-primary" style={{ padding:'0.4rem 1rem',fontSize:'0.75rem' }}>Download</a>
+                    <div className="contact-item" style={{ cursor:'default', flexDirection: 'column', alignItems: 'stretch', gap: '1rem' }}>
+                      <div style={{ display:'flex', justifyContent:'space-between', width:'100%', alignItems:'center', flexWrap: 'wrap', gap: '0.5rem' }}>
+                        <div>
+                          <strong style={{ display:'block', fontSize:'0.85rem', color:'#7F011F' }}>CURRICULUM VITAE</strong>
+                          <span style={{ color: '#0a0a0a', fontWeight: 700 }}>Suriya_Raja_Resume.pdf</span>
+                        </div>
+                        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                          <button 
+                            type="button"
+                            onClick={() => setShowResumeModal(true)} 
+                            className="btn-secondary" 
+                            style={{ padding:'0.4rem 0.8rem', fontSize:'0.75rem', borderRadius: '6px' }}
+                          >
+                            👁 View CV
+                          </button>
+                          <a 
+                            href="/assets/images/Suriya_Raja_Resume.pdf" 
+                            download="Suriya_Raja_Resume.pdf" 
+                            className="btn-primary" 
+                            style={{ padding:'0.4rem 1rem', fontSize:'0.75rem', borderRadius: '6px' }}
+                          >
+                            Download ↓
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Interactive High-Clarity CV Photo Thumbnail */}
+                      <div 
+                        onClick={() => setShowResumeModal(true)} 
+                        style={{ 
+                          position: 'relative', 
+                          width: '100%', 
+                          maxHeight: '360px', 
+                          overflow: 'hidden', 
+                          borderRadius: '12px', 
+                          border: '2px solid rgba(127,1,31,0.25)', 
+                          cursor: 'pointer',
+                          boxShadow: '0 6px 20px rgba(0,0,0,0.06)',
+                          background: '#ffffff'
+                        }}
+                        title="Click to view full high-resolution CV"
+                      >
+                        <img 
+                          src="/assets/images/Suriya_Raja_Resume.png" 
+                          alt="Suriya Raja CV Resume Preview" 
+                          style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover', objectPosition: 'top' }} 
+                        />
+                        <div style={{
+                          position: 'absolute',
+                          inset: 0,
+                          background: 'linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(10,10,10,0.85) 100%)',
+                          display: 'flex',
+                          alignItems: 'flex-end',
+                          justifyContent: 'center',
+                          padding: '1.25rem'
+                        }}>
+                          <span style={{
+                            background: '#7F011F',
+                            color: '#ffffff',
+                            padding: '0.45rem 1.2rem',
+                            borderRadius: '20px',
+                            fontSize: '0.8rem',
+                            fontWeight: 800,
+                            letterSpacing: '0.04em',
+                            boxShadow: '0 4px 15px rgba(127,1,31,0.4)'
+                          }}>
+                            🔍 Click to Preview High-Res CV
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -838,6 +904,60 @@ export default function App() {
 
       {/* PROJECT MODAL */}
       {modalProject && <Modal project={modalProject} onClose={() => setModalProject(null)} />}
+
+      {/* RESUME MODAL */}
+      {showResumeModal && (
+        <div className="modal-backdrop active" onClick={() => setShowResumeModal(false)} style={{ zIndex: 10000 }}>
+          <div className="modal-content glass-card active" style={{ maxWidth: '850px', width: '92%', maxHeight: '92vh', overflowY: 'auto', padding: '1.75rem 2rem', background: '#F5EBD0' }} onClick={(e) => e.stopPropagation()}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', borderBottom: '2px solid #7F011F', paddingBottom: '0.75rem' }}>
+              <div>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#7F011F', margin: 0, fontFamily: 'var(--font-stone)' }}>
+                  Curriculum Vitae — Suriya Raja
+                </h3>
+                <span style={{ fontSize: '0.85rem', color: '#0a0a0a', fontWeight: 700 }}>High-Resolution Enhanced CV</span>
+              </div>
+              <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+                <a 
+                  href="/assets/images/Suriya_Raja_Resume.pdf" 
+                  download="Suriya_Raja_Resume.pdf" 
+                  className="btn-primary" 
+                  style={{ padding: '0.5rem 1.25rem', fontSize: '0.8rem', fontWeight: 800 }}
+                >
+                  Download PDF ↓
+                </a>
+                <button className="modal-close" onClick={() => setShowResumeModal(false)}>×</button>
+              </div>
+            </div>
+
+            <div style={{ textAlign: 'center', background: '#ffffff', borderRadius: '12px', padding: '0.75rem', border: '2px solid #7F011F', boxShadow: '0 8px 30px rgba(0,0,0,0.1)' }}>
+              <img 
+                src="/assets/images/Suriya_Raja_Resume.png" 
+                alt="Suriya Raja CV Full Preview" 
+                style={{ width: '100%', height: 'auto', borderRadius: '6px', display: 'block' }} 
+              />
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
+              <a 
+                href="/assets/images/Suriya_Raja_Resume.pdf" 
+                download="Suriya_Raja_Resume.pdf" 
+                className="btn-primary" 
+                style={{ padding: '0.75rem 1.75rem', fontSize: '0.85rem', fontWeight: 800 }}
+              >
+                📄 Download Resume (PDF)
+              </a>
+              <a 
+                href="/assets/images/Suriya_Raja_Resume.png" 
+                download="Suriya_Raja_Resume.png" 
+                className="btn-secondary" 
+                style={{ padding: '0.75rem 1.75rem', fontSize: '0.85rem', fontWeight: 800 }}
+              >
+                🖼️ Download High-Res Image
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
