@@ -4,7 +4,7 @@ import Lanyard from './components/Lanyard/Lanyard';
 import { ScrollZoomSection } from './components/ui/ScrollZoom';
 import { TypeWriter } from './components/ui/TypeWriter';
 import { VelocityScroll } from './components/ui/VelocityScroll';
-import suriyaPhoto from './assets/suriya-photo.jpg';
+import suriyaPhoto from './assets/suriya-photo-raw.jpg';
 import lanyardCustom from './assets/lanyard/lanyard-custom.jpg';
 
 /* ─────────────────────────────────────────────

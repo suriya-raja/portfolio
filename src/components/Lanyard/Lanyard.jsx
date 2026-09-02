@@ -8,6 +8,7 @@ import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 
 import cardGLB from '../../assets/lanyard/card.glb';
 import lanyard from '../../assets/lanyard/lanyard.png';
+import cardTextureCustom from '../../assets/lanyard/card-texture-custom.jpg';
 
 import * as THREE from 'three';
 import './Lanyard.css';
@@ -17,8 +18,8 @@ extend({ MeshLineGeometry, MeshLineMaterial });
 const BLANK_PIXEL =
   'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==';
 
-const FRONT_UV_RECT = { x: 0, y: 0, w: 0.5, h: 0.755 };
-const BACK_UV_RECT = { x: 0.5, y: 0, w: 0.5, h: 0.757 };
+const FRONT_UV_RECT = { x: 0, y: 0, w: 0.5, h: 0.758 };
+const BACK_UV_RECT = { x: 0.5, y: 0, w: 0.5, h: 0.758 };
 
 export default function Lanyard({
   position = [0, 0, 30],
@@ -44,7 +45,7 @@ export default function Lanyard({
       <Canvas
         camera={{ position: position, fov: fov }}
         dpr={[1, isMobile ? 1.5 : 2]}
-        gl={{ alpha: transparent }}
+        gl={{ alpha: transparent, outputColorSpace: THREE.SRGBColorSpace }}
         onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
       >
         <ambientLight intensity={Math.PI} />
@@ -54,6 +55,7 @@ export default function Lanyard({
             frontImage={frontImage}
             backImage={backImage}
             imageFit={imageFit}
+            cardTexture={frontImage ? cardTextureCustom : null}
             lanyardImage={lanyardImage}
             lanyardWidth={lanyardWidth}
           />
@@ -76,6 +78,7 @@ function Band({
   frontImage = null,
   backImage = null,
   imageFit = 'cover',
+  cardTexture = null,
   lanyardImage = null,
   lanyardWidth = 1
 }) {
@@ -94,53 +97,20 @@ function Band({
   const texture = useTexture(lanyardImage || lanyard);
   const frontTex = useTexture(frontImage || BLANK_PIXEL);
   const backTex = useTexture(backImage || BLANK_PIXEL);
+  const cardTex = useTexture(cardTexture || BLANK_PIXEL);
+  // Ensure textures are treated as sRGB so meshBasicMaterial shows them at full brightness
+  if (frontTex) frontTex.colorSpace = THREE.SRGBColorSpace;
+  if (backTex) backTex.colorSpace = THREE.SRGBColorSpace;
 
   const cardMap = useMemo(() => {
-    const baseMap = materials.base.map;
-    if (!frontImage && !backImage) return baseMap;
-
-    const baseImg = baseMap.image;
-    const W = baseImg.width;
-    const H = baseImg.height;
-    const canvas = document.createElement('canvas');
-    canvas.width = W;
-    canvas.height = H;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return baseMap;
-    ctx.drawImage(baseImg, 0, 0, W, H);
-
-    const drawFitted = (img, rect) => {
-      const rx = rect.x * W;
-      const ry = rect.y * H;
-      const rw = rect.w * W;
-      const rh = rect.h * H;
-      const pick = imageFit === 'contain' ? Math.min : Math.max;
-      const scale = pick(rw / img.width, rh / img.height) * 1.25;
-      const dw = img.width * scale;
-      const dh = img.height * scale;
-      const dx = rx + (rw - dw) / 2;
-      const dy = ry + (rh - dh) / 2;
-      ctx.save();
-      ctx.beginPath();
-      ctx.rect(rx, ry, rw, rh);
-      ctx.clip();
-      ctx.drawImage(img, dx, dy, dw, dh);
-      ctx.restore();
-    };
-
-    const actualBackImg = backImage || frontImage;
-    const actualBackTex = backImage ? backTex : frontTex;
-
-    if (frontImage && frontTex.image) drawFitted(frontTex.image, FRONT_UV_RECT);
-    if (actualBackImg && actualBackTex.image) drawFitted(actualBackTex.image, BACK_UV_RECT);
-
-    const composite = new THREE.CanvasTexture(canvas);
-    composite.colorSpace = THREE.SRGBColorSpace;
-    composite.flipY = baseMap.flipY;
-    composite.anisotropy = 16;
-    composite.needsUpdate = true;
-    return composite;
-  }, [frontImage, backImage, imageFit, frontTex, backTex, materials.base.map]);
+    if (cardTexture && cardTex && cardTex.image) {
+      cardTex.colorSpace = THREE.SRGBColorSpace;
+      cardTex.flipY = false;
+      cardTex.needsUpdate = true;
+      return cardTex;
+    }
+    return materials.base.map;
+  }, [cardTexture, cardTex, materials.base.map]);
 
   const [curve] = useState(
     () => new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()])
@@ -168,20 +138,35 @@ function Band({
       [card, j1, j2, j3, fixed].forEach(ref => ref.current?.wakeUp());
       card.current?.setNextKinematicTranslation({ x: vec.x - dragged.x, y: vec.y - dragged.y, z: vec.z - dragged.z });
     }
-    if (fixed.current) {
+    if (fixed.current && j1.current && j2.current && j3.current && card.current && band.current) {
+      const dt = Math.min(delta, 0.05);
       [j1, j2].forEach(ref => {
         if (!ref.current.lerped) ref.current.lerped = new THREE.Vector3().copy(ref.current.translation());
-        const clampedDistance = Math.max(0.1, Math.min(1, ref.current.lerped.distanceTo(ref.current.translation())));
-        ref.current.lerped.lerp(ref.current.translation(), delta * (minSpeed + clampedDistance * (maxSpeed - minSpeed)));
+        const t = ref.current.translation();
+        if (Number.isFinite(t.x) && Number.isFinite(t.y) && Number.isFinite(t.z)) {
+          const clampedDistance = Math.max(0.1, Math.min(1, ref.current.lerped.distanceTo(t)));
+          ref.current.lerped.lerp(t, dt * (minSpeed + clampedDistance * (maxSpeed - minSpeed)));
+        }
       });
-      curve.points[0].copy(j3.current.translation());
-      curve.points[1].copy(j2.current.lerped);
-      curve.points[2].copy(j1.current.lerped);
-      curve.points[3].copy(fixed.current.translation());
-      band.current.geometry.setPoints(curve.getPoints(isMobile ? 16 : 32));
-      ang.copy(card.current.angvel());
-      rot.copy(card.current.rotation());
-      card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
+      const p0 = j3.current.translation();
+      const p1 = j2.current.lerped;
+      const p2 = j1.current.lerped;
+      const p3 = fixed.current.translation();
+      if ([p0, p1, p2, p3].every(p => p && Number.isFinite(p.x) && Number.isFinite(p.y) && Number.isFinite(p.z))) {
+        curve.points[0].copy(p0);
+        curve.points[1].copy(p1);
+        curve.points[2].copy(p2);
+        curve.points[3].copy(p3);
+        const pts = curve.getPoints(isMobile ? 16 : 32);
+        if (pts && pts.every(p => Number.isFinite(p.x) && Number.isFinite(p.y) && Number.isFinite(p.z))) {
+          band.current.geometry.setPoints(pts);
+        }
+      }
+      const a = card.current.angvel();
+      const r = card.current.rotation();
+      if (Number.isFinite(a.x) && Number.isFinite(r.y) && Number.isFinite(a.y) && Number.isFinite(a.z)) {
+        card.current.setAngvel({ x: a.x, y: a.y - r.y * 0.25, z: a.z });
+      }
     }
   });
 
@@ -215,14 +200,7 @@ function Band({
             )}
           >
             <mesh geometry={nodes.card.geometry}>
-              <meshPhysicalMaterial
-                map={cardMap}
-                map-anisotropy={16}
-                clearcoat={isMobile ? 0 : 1}
-                clearcoatRoughness={0.15}
-                roughness={0.9}
-                metalness={0.8}
-              />
+              <meshBasicMaterial map={cardMap} toneMapped={false} />
             </mesh>
             <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />
             <mesh geometry={nodes.clamp.geometry} material={materials.metal} />
